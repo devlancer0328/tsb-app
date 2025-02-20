@@ -1,25 +1,21 @@
-import type React from "react";
-import type { Metadata } from "next";
 import { Inter, Merriweather } from "next/font/google";
-import "./globals.css";
+import { LoadingProvider } from "@/components/ui/loading-context";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
-import Icon from "@/app/icon.ico";
+import { Toaster } from "@/components/ui/toaster";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const merriweather = Merriweather({
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
   variable: "--font-merriweather",
+  weight: ["300", "400", "700", "900"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "The Secret Ballot",
-  description: "Professional election services for Homeowner Associations",
-  icons: {
-    icon: Icon.src,
-  },
+  description: "Professional Election Services for Homeowner Associations",
 };
 
 export default function RootLayout({
@@ -35,11 +31,9 @@ export default function RootLayout({
           <main className="min-h-screen pt-[60px]">{children}</main>
           <Footer />
           <ScrollToTop />
+          <Toaster />
         </LoadingProvider>
       </body>
     </html>
   );
 }
-
-import "./globals.css";
-import { LoadingProvider } from "@/components/ui/loading-context";

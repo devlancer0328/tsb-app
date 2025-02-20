@@ -1,12 +1,18 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  Suspense,
+} from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { LoadingAnimation } from "@/components/ui/loading-animation";
 
 const LoadingContext = createContext({});
 
-export function LoadingProvider({ children }: { children: React.ReactNode }) {
+function LoadingWrapper({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -22,5 +28,13 @@ export function LoadingProvider({ children }: { children: React.ReactNode }) {
       {isLoading && <LoadingAnimation />}
       {children}
     </>
+  );
+}
+
+export function LoadingProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={<LoadingAnimation />}>
+      <LoadingWrapper>{children}</LoadingWrapper>
+    </Suspense>
   );
 }
