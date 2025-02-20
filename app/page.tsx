@@ -51,10 +51,18 @@ export default function Home() {
             <AnimatedElement delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
-                  <Link href="/request-proposal">Request Proposal</Link>
+                  <Link
+                    href="/" //href="/request-proposal"
+                  >
+                    Request Proposal
+                  </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="/services">Learn More</Link>
+                  <Link
+                    href="/" //href="/services"
+                  >
+                    Learn More
+                  </Link>
                 </Button>
               </div>
             </AnimatedElement>

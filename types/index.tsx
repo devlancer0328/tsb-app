@@ -1,7 +1,7 @@
-import { Building2, Calendar, Link } from "lucide-react";
+import { Building2, Calendar } from "lucide-react";
 
 import { Users } from "lucide-react";
-
+import Link from "next/link";
 import { HandshakeIcon, MapPin } from "lucide-react";
 
 import { Award } from "lucide-react";
