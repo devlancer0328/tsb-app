@@ -32,29 +32,25 @@ export function Footer() {
             <h3 className="text-lg font-bold">Quick Links</h3>
             <nav className="space-y-2">
               <Link
-                // href="/services"
-                href="/"
+                href="/services"
                 className="block hover:text-primary transition-colors"
               >
                 Services
               </Link>
               <Link
-                // href="/request-proposal"
-                href="/"
+                href="/request-proposal"
                 className="block hover:text-primary transition-colors"
               >
                 Request Proposal
               </Link>
               <Link
-                // href="/faqs"
-                href="/"
+                href="/faqs"
                 className="block hover:text-primary transition-colors"
               >
                 FAQs
               </Link>
               <Link
-                // href="/blog"
-                href="/"
+                href="/blog"
                 className="block hover:text-primary transition-colors"
               >
                 Blog

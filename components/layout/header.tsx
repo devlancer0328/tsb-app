@@ -79,8 +79,7 @@ export function Header() {
                               style={{
                                 backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${ElectionImg.src})`,
                               }}
-                              // href="/services"
-                              href="/"
+                              href="/services"
                             >
                               <div className="mb-2 mt-4 text-lg font-medium text-white">
                                 Election Services
@@ -99,15 +98,13 @@ export function Header() {
                           Secure and convenient online voting solution
                         </ListItem>
                         <ListItem
-                          // href="/services/consulting"
-                          href="/"
+                          href="/services/consulting"
                           title="Election Consulting"
                         >
                           Expert guidance on election processes and compliance
                         </ListItem>
                         <ListItem
-                          // href="/services/training"
-                          href="/"
+                          href="/services/training"
                           title="Board Training"
                         >
                           Educational programs for HOA board members
@@ -116,12 +113,7 @@ export function Header() {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <Link
-                      // href="/request-proposal"
-                      href="/"
-                      legacyBehavior
-                      passHref
-                    >
+                    <Link href="/request-proposal" legacyBehavior passHref>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >
@@ -139,12 +131,7 @@ export function Header() {
                     </Link>
                   </NavigationMenuItem> */}
                   <NavigationMenuItem>
-                    <Link
-                      // href="/blog"
-                      href="/"
-                      legacyBehavior
-                      passHref
-                    >
+                    <Link href="/blog" legacyBehavior passHref>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >
@@ -153,12 +140,7 @@ export function Header() {
                     </Link>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <Link
-                      // href="/contact"
-                      href="/"
-                      legacyBehavior
-                      passHref
-                    >
+                    <Link href="/contact" legacyBehavior passHref>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >
@@ -169,11 +151,7 @@ export function Header() {
                 </NavigationMenuList>
               </NavigationMenu>
               <Button asChild variant="default">
-                <Link
-                  href="/" //href="/request-info"
-                >
-                  Request Information
-                </Link>
+                <Link href="/request-info">Request Information</Link>
               </Button>
             </div>
 
@@ -192,11 +170,7 @@ export function Header() {
                     </Link>
                     <div className="flex flex-col space-y-2">
                       <p className="text-lg font-medium">Services</p>
-                      <Link
-                        // href="/services"
-                        href="/"
-                        className="pl-4 text-sm"
-                      >
+                      <Link href="/services" className="pl-4 text-sm">
                         Election Services
                       </Link>
                       <Link
@@ -206,47 +180,29 @@ export function Header() {
                         eVoting Platform
                       </Link>
                       <Link
-                        // href="/services/consulting"
-                        href="/"
+                        href="/services/consulting"
                         className="pl-4 text-sm"
                       >
                         Election Consulting
                       </Link>
-                      <Link
-                        // href="/services/training"
-                        href="/"
-                        className="pl-4 text-sm"
-                      >
+                      <Link href="/services/training" className="pl-4 text-sm">
                         Board Training
                       </Link>
                     </div>
                     <Link
-                      // href="/request-proposal"
-                      href="/"
+                      href="/request-proposal"
                       className="text-lg font-medium"
                     >
                       Request Proposal
                     </Link>
-                    <Link
-                      // href="/blog"
-                      href="/"
-                      className="text-lg font-medium"
-                    >
+                    <Link href="/blog" className="text-lg font-medium">
                       Blog
                     </Link>
-                    <Link
-                      // href="/contact"
-                      href="/"
-                      className="text-lg font-medium"
-                    >
+                    <Link href="/contact" className="text-lg font-medium">
                       Contact Us
                     </Link>
                     <Button asChild variant="default" className="w-full">
-                      <Link
-                        href="/" //href="/request-info"
-                      >
-                        Request Information
-                      </Link>
+                      <Link href="/request-info">Request Information</Link>
                     </Button>
                   </div>
                 </SheetContent>
