@@ -30,13 +30,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
       <body className="font-sans">
-        <Header />
-        <main className="min-h-screen pt-[60px]">{children}</main>
-        <Footer />
-        <ScrollToTop />
+        <LoadingProvider>
+          <Header />
+          <main className="min-h-screen pt-[60px]">{children}</main>
+          <Footer />
+          <ScrollToTop />
+        </LoadingProvider>
       </body>
     </html>
   );
 }
 
 import "./globals.css";
+import { LoadingProvider } from "@/components/ui/loading-context";
