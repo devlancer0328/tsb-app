@@ -50,9 +50,9 @@ export function RequestProposalForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-4">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 md:border-r md:border-gray-200 md:pr-4">
             <h2 className="text-2xl font-bold">
-              Tell us about your project...
+              1. Tell us about your project...
             </h2>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -97,7 +97,7 @@ export function RequestProposalForm() {
                   </div>
                 </RadioGroup>
               </div>
-              <div className="space-y-2">
+              <div className="flex flex-col gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="association-name">
                     How urgent is your request *
@@ -152,16 +152,11 @@ export function RequestProposalForm() {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold">Tell us about you...</h2>
-
-            <div className="space-y-2">
-              <Label htmlFor="association-name">Association Name</Label>
-              <Input id="association-name" required />
-            </div>
+            <h2 className="text-2xl font-bold">2. Tell us about you...</h2>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="contact-name">First and Last Name</Label>
-                <Input id="contact-name" required />
+                <Label htmlFor="association-name">Association Name</Label>
+                <Input id="association-name" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="management-company-name">
@@ -172,17 +167,23 @@ export function RequestProposalForm() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
+                <Label htmlFor="contact-name">First and Last Name</Label>
+                <Input id="contact-name" required />
+              </div>
+              <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" type="email" required />
               </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone</Label>
                 <Input id="phone" type="tel" required />
               </div>
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="association-address">Association Address</Label>
-              <Input id="association-address" required />
+              <div className="space-y-2">
+                <Label htmlFor="association-address">Association Address</Label>
+                <Input id="association-address" required />
+              </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
