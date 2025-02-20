@@ -144,3 +144,37 @@ export const PARTNERSHIPS = [
     description: "Regular attendance at CAI and CACM events",
   },
 ];
+
+export const POSTS = [
+  {
+    title: "Elections by Acclamation",
+    excerpt:
+      "Understanding the process and requirements for elections by acclamation in HOA governance.",
+    date: "2024-02-15",
+    image: "/placeholder.svg?height=200&width=400",
+    slug: "elections-by-acclamation",
+  },
+  {
+    title: "SB 323 – How it changes the game",
+    excerpt:
+      "An analysis of SB 323 and its impact on HOA election procedures in California.",
+    date: "2024-02-10",
+    image: "/placeholder.svg?height=200&width=400",
+    slug: "sb-323-changes",
+  },
+  {
+    title: "The Benefits of Electronic Voting",
+    excerpt:
+      "Exploring how electronic voting systems are transforming HOA elections.",
+    date: "2024-02-05",
+    image: "/placeholder.svg?height=200&width=400",
+    slug: "electronic-voting-benefits",
+  },
+  {
+    title: "Common Election Mistakes to Avoid",
+    excerpt: "Key pitfalls to watch out for during HOA election processes.",
+    date: "2024-01-30",
+    image: "/placeholder.svg?height=200&width=400",
+    slug: "common-election-mistakes",
+  },
+];
