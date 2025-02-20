@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import Icon from "@/app/icon.ico";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const merriweather = Merriweather({
@@ -14,9 +15,11 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "The Secret Ballot - Inspector of Elections",
+  title: "The Secret Ballot",
   description: "Professional election services for Homeowner Associations",
-  generator: "v0.dev",
+  icons: {
+    icon: Icon.src,
+  },
 };
 
 export default function RootLayout({
