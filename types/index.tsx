@@ -47,7 +47,7 @@ export const FAQs = [
       <>
         Inspectors of election must perform their duties impartially, in good
         faith, to the best of their abilities, and as expeditiously as
-        practical. (
+        practical.
         <Link
           href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=5110"
           className="text-primary hover:underline inline-flex items-center gap-1"
@@ -55,7 +55,7 @@ export const FAQs = [
         >
           Civ. Code § 5110(d)
         </Link>
-        ) Inspectors must perform a long list of duties as outlined in civil
+         Inspectors must perform a long list of duties as outlined in civil
         code.
       </>
     ),
