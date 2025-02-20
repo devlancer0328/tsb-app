@@ -17,6 +17,8 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import ElectionImg from "@/app/assets/img/election.jpg";
 import LogoImg from "@/app/assets/img/logo.png";
+import { Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,104 +51,163 @@ export function Header() {
                 width={200}
                 height={50}
                 priority
+                className="w-[150px] md:w-[200px]"
               />
             </Link>
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <Link href="/" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-4">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <Link href="/" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Home
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                        <li className="row-span-3">
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md relative bg-cover bg-center hover:scale-105 transition-all duration-300"
+                              style={{
+                                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${ElectionImg.src})`,
+                              }}
+                              href="/services"
+                            >
+                              <div className="mb-2 mt-4 text-lg font-medium text-white">
+                                Election Services
+                              </div>
+                              <p className="text-sm leading-tight text-gray-200">
+                                Comprehensive election management for HOAs of
+                                all sizes
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                        <ListItem
+                          href="https://e-voting-ruby.vercel.app"
+                          title="eVoting Platform"
+                        >
+                          Secure and convenient online voting solution
+                        </ListItem>
+                        <ListItem
+                          href="/services/consulting"
+                          title="Election Consulting"
+                        >
+                          Expert guidance on election processes and compliance
+                        </ListItem>
+                        <ListItem
+                          href="/services/training"
+                          title="Board Training"
+                        >
+                          Educational programs for HOA board members
+                        </ListItem>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/request-proposal" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Request Proposal
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  {/* <NavigationMenuItem>
+                    <Link href="/faqs" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        FAQs
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem> */}
+                  <NavigationMenuItem>
+                    <Link href="/blog" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Blog
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/contact" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Contact Us
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+              <Button asChild variant="default">
+                <Link href="/request-info">Request Information</Link>
+              </Button>
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className="md:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px]">
+                  <div className="flex flex-col space-y-4 mt-6">
+                    <Link href="/" className="text-lg font-medium">
                       Home
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <a
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md relative bg-cover bg-center hover:scale-105 transition-all duration-300"
-                            style={{
-                              backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${ElectionImg.src})`,
-                            }}
-                            href="/services"
-                          >
-                            <div className="mb-2 mt-4 text-lg font-medium text-white">
-                              Election Services
-                            </div>
-                            <p className="text-sm leading-tight text-gray-200">
-                              Comprehensive election management for HOAs of all
-                              sizes
-                            </p>
-                          </a>
-                        </NavigationMenuLink>
-                      </li>
-                      <ListItem
+                    </Link>
+                    <div className="flex flex-col space-y-2">
+                      <p className="text-lg font-medium">Services</p>
+                      <Link href="/services" className="pl-4 text-sm">
+                        Election Services
+                      </Link>
+                      <Link
                         href="https://e-voting-ruby.vercel.app"
-                        title="eVoting Platform"
+                        className="pl-4 text-sm"
                       >
-                        Secure and convenient online voting solution
-                      </ListItem>
-                      <ListItem
+                        eVoting Platform
+                      </Link>
+                      <Link
                         href="/services/consulting"
-                        title="Election Consulting"
+                        className="pl-4 text-sm"
                       >
-                        Expert guidance on election processes and compliance
-                      </ListItem>
-                      <ListItem
-                        href="/services/training"
-                        title="Board Training"
-                      >
-                        Educational programs for HOA board members
-                      </ListItem>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/request-proposal" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
+                        Election Consulting
+                      </Link>
+                      <Link href="/services/training" className="pl-4 text-sm">
+                        Board Training
+                      </Link>
+                    </div>
+                    <Link
+                      href="/request-proposal"
+                      className="text-lg font-medium"
                     >
                       Request Proposal
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                {/* <NavigationMenuItem>
-                  <Link href="/faqs" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      FAQs
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem> */}
-                <NavigationMenuItem>
-                  <Link href="/blog" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
+                    </Link>
+                    <Link href="/blog" className="text-lg font-medium">
                       Blog
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
+                    </Link>
+                    <Link href="/contact" className="text-lg font-medium">
                       Contact Us
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-            <Button asChild variant="default">
-              <Link href="/request-info">Request Information</Link>
-            </Button>
+                    </Link>
+                    <Button asChild variant="default" className="w-full">
+                      <Link href="/request-info">Request Information</Link>
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </motion.header>

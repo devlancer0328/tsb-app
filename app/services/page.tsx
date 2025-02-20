@@ -35,9 +35,15 @@ const AnimatedCard = motion(Card);
 export default function ServicesPage() {
   return (
     <div className="container mx-auto px-4 py-12">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">Our Services</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <div className="mb-12">
+        <div className="flex flex-row items-center gap-3 mb-8">
+          <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+            Our Services
+          </h2>
+          <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
+        </div>
+        <p className="text-xl text-muted-foreground">
           Comprehensive election management solutions for Homeowner Associations
           of all sizes
         </p>
@@ -114,11 +120,15 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-4 text-center">
-          eVoting Platform
-        </h2>
-        <p className="text-lg text-muted-foreground mb-8 text-center max-w-2xl mx-auto">
+      <div className="mb-16 py-12">
+        <div className="flex flex-row items-center gap-3 mb-8">
+          <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+            eVoting Platform
+          </h2>
+          <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
+        </div>
+        <p className="text-lg text-muted-foreground mb-8 ">
           Our state-of-the-art eVoting platform provides a secure, convenient,
           and accessible way for homeowners to participate in association
           elections.
@@ -168,7 +178,7 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      <div className="text-center">
+      <div className="text-center bg-gray-100 rounded-lg p-8">
         <h2 className="text-3xl font-bold mb-4">
           Ready to modernize your HOA elections?
         </h2>

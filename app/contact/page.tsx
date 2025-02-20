@@ -5,14 +5,20 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-12">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+      <div className="mb-12">
+        <div className="flex flex-row items-center gap-3 mb-8">
+          <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+            Contact Us
+          </h2>
+          <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
+        </div>
         <p className="text-lg text-muted-foreground">
           Get in touch with our team for any questions or inquiries
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-8 max-w-9xl mx-auto">
         <Card className="p-6 space-y-6">
           <div className="space-y-4">
             <div className="flex items-start space-x-3">

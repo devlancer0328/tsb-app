@@ -3,54 +3,8 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Building2,
-  Users,
-  Award,
-  MapPin,
-  Calendar,
-  HandshakeIcon,
-} from "lucide-react";
-
+import { HIGHLIGHTS, PARTNERSHIPS } from "@/types/index";
 export default function About() {
-  const highlights = [
-    {
-      icon: Building2,
-      title: "Family Owned",
-      description:
-        "Founded in 2019, we're a proud family-owned and operated business.",
-    },
-    {
-      icon: Users,
-      title: "Experienced Team",
-      description: "Over 20 years of collective experience in HOA Management.",
-    },
-    {
-      icon: MapPin,
-      title: "Local Expertise",
-      description:
-        "Serving San Diego County and surrounding areas from our Alpine location.",
-    },
-  ];
-
-  const partnerships = [
-    {
-      icon: Award,
-      title: "Industry Partners",
-      description: "Members of Community Associations Institute (CAI)",
-    },
-    {
-      icon: HandshakeIcon,
-      title: "Professional Network",
-      description: "California Association of Community Managers (CACM) member",
-    },
-    {
-      icon: Calendar,
-      title: "Always Current",
-      description: "Regular attendance at CAI and CACM events",
-    },
-  ];
-
   return (
     <div className="container mx-auto py-12">
       <motion.div
@@ -79,7 +33,7 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          {highlights.map((item, index) => (
+          {HIGHLIGHTS.map((item, index) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
@@ -141,7 +95,7 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          {partnerships.map((item, index) => (
+          {PARTNERSHIPS.map((item, index) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
