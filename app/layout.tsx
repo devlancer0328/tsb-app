@@ -1,10 +1,17 @@
 import { Inter, Merriweather } from "next/font/google";
+import dynamic from "next/dynamic";
 import { LoadingProvider } from "@/components/ui/loading-context";
-import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
+
+const Header = dynamic(
+  () => import("@/components/layout/header").then((mod) => mod.Header),
+  {
+    ssr: false,
+  }
+);
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const merriweather = Merriweather({
