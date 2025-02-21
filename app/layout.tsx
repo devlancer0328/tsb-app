@@ -1,6 +1,6 @@
 import { Inter, Merriweather } from "next/font/google";
 import dynamic from "next/dynamic";
-import { LoadingProvider } from "@/components/ui/loading-context";
+import { LoadingProvider } from "@/context/loading-context";
 import "./globals.css";
 
 const Header = dynamic(
