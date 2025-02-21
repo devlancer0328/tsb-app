@@ -51,13 +51,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
       <body className="font-sans">
-        <LoadingProvider>
-          <Header />
-          <main className="min-h-screen pt-[60px]">{children}</main>
-          <Footer />
-          <ScrollToTop />
-          <Toaster />
-        </LoadingProvider>
+        {/* <LoadingProvider> */}
+        <Header />
+        <main className="min-h-screen pt-[60px]">{children}</main>
+        <Footer />
+        <ScrollToTop />
+        <Toaster />
+        {/* </LoadingProvider> */}
       </body>
     </html>
   );
