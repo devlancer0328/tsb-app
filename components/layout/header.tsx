@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import ElectionImg from "@/app/assets/img/election.jpg";
 import LogoImg from "@/app/assets/img/logo.png";
-import { Menu } from "lucide-react";
+import { Menu, Send } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function Header() {
@@ -151,7 +151,10 @@ export function Header() {
                 </NavigationMenuList>
               </NavigationMenu>
               <Button asChild variant="default">
-                <Link href="/request-info">Request Information</Link>
+                <Link href="/request-info">
+                  <Send className="w-4 h-4" />
+                  Request Info
+                </Link>
               </Button>
             </div>
 
@@ -202,7 +205,10 @@ export function Header() {
                       Contact Us
                     </Link>
                     <Button asChild variant="default" className="w-full">
-                      <Link href="/request-info">Request Information</Link>
+                      <Link href="/request-info">
+                        <Send className="w-4 h-4" />
+                        Request Info
+                      </Link>
                     </Button>
                   </div>
                 </SheetContent>
