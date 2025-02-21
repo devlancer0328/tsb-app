@@ -1,3 +1,5 @@
+"use client";
+
 import { RequestProposalForm } from "@/components/shared/request-proposal-form";
 import { Card } from "@/components/ui/card";
 

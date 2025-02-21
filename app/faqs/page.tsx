@@ -1,9 +1,14 @@
-"use client"
+"use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Card } from "@/components/ui/card"
-import { AnimatedElement } from "@/components/ui/animated-element"
-import { motion, AnimatePresence } from "framer-motion"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Card } from "@/components/ui/card";
+import { AnimatedElement } from "@/components/ui/animated-element";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -31,9 +36,9 @@ const faqs = [
     answer:
       "The typical election process takes 30-45 days from start to finish. This includes preparation of materials, distribution of ballots, and the counting process. However, timing can vary based on specific association requirements and election complexity.",
   },
-]
+];
 
-const AnimatedAccordionContent = motion(AccordionContent)
+const AnimatedAccordionContent = motion(AccordionContent);
 
 export default function FAQsPage() {
   return (
@@ -41,7 +46,9 @@ export default function FAQsPage() {
       <div className="max-w-3xl mx-auto">
         <AnimatedElement>
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Frequently Asked Questions</h1>
+            <h1 className="text-4xl font-bold mb-4">
+              Frequently Asked Questions
+            </h1>
             <p className="text-lg text-muted-foreground">
               Find answers to common questions about our election services
             </p>
@@ -53,7 +60,9 @@ export default function FAQsPage() {
             {faqs.map((faq, index) => (
               <AnimatedElement key={index} delay={0.1 * index}>
                 <AccordionItem value={`item-${index}`}>
-                  <AccordionTrigger className="text-left text-lg font-medium">{faq.question}</AccordionTrigger>
+                  <AccordionTrigger className="text-left text-lg font-medium">
+                    {faq.question}
+                  </AccordionTrigger>
                   <AnimatePresence>
                     <AnimatedAccordionContent
                       initial={{ opacity: 0, height: 0 }}
@@ -71,6 +80,5 @@ export default function FAQsPage() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
-

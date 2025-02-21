@@ -1,13 +1,31 @@
 import { Inter, Merriweather } from "next/font/google";
 import dynamic from "next/dynamic";
 import { LoadingProvider } from "@/components/ui/loading-context";
-import { Footer } from "@/components/layout/footer";
-import { ScrollToTop } from "@/components/ui/scroll-to-top";
-import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 const Header = dynamic(
   () => import("@/components/layout/header").then((mod) => mod.Header),
+  {
+    ssr: false,
+  }
+);
+
+const Footer = dynamic(
+  () => import("@/components/layout/footer").then((mod) => mod.Footer),
+  {
+    ssr: false,
+  }
+);
+
+const ScrollToTop = dynamic(
+  () => import("@/components/ui/scroll-to-top").then((mod) => mod.ScrollToTop),
+  {
+    ssr: false,
+  }
+);
+
+const Toaster = dynamic(
+  () => import("@/components/ui/toaster").then((mod) => mod.Toaster),
   {
     ssr: false,
   }

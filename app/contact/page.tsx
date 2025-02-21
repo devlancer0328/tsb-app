@@ -1,3 +1,5 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import { ContactForm } from "@/components/shared/contact-form";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";

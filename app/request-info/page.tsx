@@ -1,5 +1,7 @@
-import { RequestInfoForm } from "@/components/shared/request-info-form"
-import { Card } from "@/components/ui/card"
+"use client";
+
+import { RequestInfoForm } from "@/components/shared/request-info-form";
+import { Card } from "@/components/ui/card";
 
 export default function RequestInfoPage() {
   return (
@@ -8,7 +10,8 @@ export default function RequestInfoPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Request Information</h1>
           <p className="text-lg text-muted-foreground">
-            Submit your questions or request detailed information about our services
+            Submit your questions or request detailed information about our
+            services
           </p>
         </div>
 
@@ -17,6 +20,5 @@ export default function RequestInfoPage() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
-
