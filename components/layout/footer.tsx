@@ -9,7 +9,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Contact Us Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">Contact Us</h3>
+            <span className="text-2xl text-[#A0FF8B] font-bold">
+              Contact Us
+            </span>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5" />
@@ -33,7 +35,7 @@ export function Footer() {
 
           {/* Explore Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl">Explore</h3>
+            <span className="text-2xl text-[#A0FF8B] font-bold">Explore</span>
             <nav className="space-y-2">
               <Link
                 href="/"
@@ -70,7 +72,9 @@ export function Footer() {
 
           {/* Legal Info Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl">Legal Info</h3>
+            <span className="text-2xl text-[#A0FF8B] font-bold">
+              Legal Info
+            </span>
             <nav className="space-y-2">
               <Link
                 href="/privacy-policy"
@@ -89,7 +93,7 @@ export function Footer() {
 
           {/* Get in touch Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl">Get in touch</h3>
+            <span className="text-2xl font-bold">Get in touch</span>
             <p className="text-sm">
               let's connect on social media for future updates
             </p>

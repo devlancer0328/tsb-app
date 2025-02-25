@@ -22,6 +22,7 @@ import HomeHerosImg3 from "@/app/assets/img/home-heros-3.png";
 import HomeHerosImg4 from "@/app/assets/img/home-heros-4.png";
 import HomeHerosImg5 from "@/app/assets/img/home-heros-5.png";
 import HomeAboutUsImg from "@/app/assets/img/home-aboutus.png";
+import BGHomeImg from "@/app/assets/img/bg-home.png";
 import { useState, useEffect } from "react";
 import {
   Carousel,
@@ -56,8 +57,8 @@ export default function Home() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-[#E6F7FF] to-white pt-[120px]">
-        <div className="container mx-auto px-4 py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#E6F7FF] to-white pt-[50px] md:pt-[120px]">
+        <div className="container mx-auto px-4 py-16 md:py-24 md:px-0">
           <div className="mx-auto space-y-12 grid grid-cols-1 md:grid-cols-2 text-center md:text-left">
             <div className="flex flex-col gap-8 mt-4 md:mt-2">
               <AnimatedElement>
@@ -83,7 +84,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
-                    className="bg-[#00B3EA] hover:bg-[#0082AA] text-white rounded-full px-8"
+                    className="bg-[#00B3EA] hover:bg-[#0082AA] text-white px-8 text-lg md:text-xl font-bold tracking-tighter sm:text-xl rounded-lg h-12 md:h-14"
                     asChild
                   >
                     <Link href="/request-proposal">Get Started</Link>
@@ -111,7 +112,7 @@ export default function Home() {
       </section>
 
       <section className="py-12">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-0">
           <motion.div
             className="space-y-12"
             initial={{ opacity: 0 }}
@@ -164,81 +165,84 @@ export default function Home() {
         </div>
       </section>
       <section className="py-12">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto text-center px-4 md:px-0">
           <div className="flex flex-col gap-4">
-            <span className="text-center text-3xl font-bold">
+            <span className="text-center text-2xl md:text-3xl font-bold">
               Our <span className="text-[#00B3EA]">Trusted</span> Voting{" "}
               <span className="text-[#00B3EA]">Solutions</span> We offer
             </span>
-            <span className="text-lg text-gray-600">
+            <span className="text-base md:text-lg text-gray-600">
               From ballot preparation to vote counting, we ensure a seamless and
-              transparent election process <br />
+              transparent election process <br className="hidden md:block" />
               Our expert services guarantee fairness, security, and compliance
               for every vote
             </span>
+            Solutions
           </div>
-          <div className="bg-[#00B3EA]/10 rounded-lg p-4 mt-4 flex flex-row gap-40 h-[500px]">
+          <div className="bg-[#00B3EA]/10 rounded-lg p-4 mt-4 flex flex-col md:flex-row md:gap-40 h-auto md:h-[500px]">
             <div className="flex flex-col gap-4 flex-1 justify-center">
               {SERVICES.map((service, index) => (
                 <div
                   key={index}
-                  className="flex flex-col gap-4 text-left cursor-pointer"
+                  className="flex flex-col gap-2 text-left cursor-pointer transition-all duration-200 hover:bg-[#00B3EA]/5 p-4 rounded-lg"
                   onClick={() => setSelectedIndex(index)}
                 >
                   <span
-                    className={`text-xl font-bold ${
+                    className={`text-lg md:text-xl font-bold transition-colors ${
                       selectedIndex === index
                         ? "text-[#0073A0]"
-                        : "text-gray-600"
+                        : "text-gray-600 hover:text-[#0073A0]/80"
                     }`}
                   >
                     {service.title}
                   </span>
                   <span
-                    className={`text-lg ${
+                    className={`text-base md:text-lg transition-all ${
                       selectedIndex === index
                         ? "text-[#0073A0] block"
-                        : "text-gray-600 hidden"
+                        : "text-gray-600 hidden hover:text-[#0073A0]/80"
                     }`}
                   >
                     {service.description}
                   </span>
                   <hr
-                    className={`border-t w-full  ${
+                    className={`border-t w-full transition-colors ${
                       selectedIndex === index
                         ? "border-[#0073A0] border-2"
-                        : "border-gray-600"
+                        : "border-gray-600 group-hover:border-[#0073A0]/50"
                     }`}
                   />
                 </div>
               ))}
             </div>
-            <div className="flex flex-col gap-4 justify-end w-[600px]">
-              <div className="relative bg-[#0080B2] rounded-t-3xl p-4 h-[300px] w-[600px]" />
+            <div className="flex flex-col gap-4 justify-end w-full md:w-[600px] mt-4 md:mt-0">
+              <div className="relative bg-[#0080B2] rounded-t-3xl p-4 h-[200px] md:h-[300px] w-full md:w-[600px] hidden md:block" />
               <Image
                 src={heroImages[selectedIndex]}
                 alt="Election Services Hero Image"
                 width={600}
                 height={400}
-                className="rounded-lg absolute"
+                className="rounded-lg absolute hidden md:block"
               />
             </div>
           </div>
         </div>
       </section>
+
       <section className="py-12">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto text-center px-4 md:px-0">
           <AnimatedElement>
             <div className="flex flex-col gap-4">
-              <span className="text-3xl font-bold tracking-tighter sm:text-4xl">
+              <span className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl">
                 Real <span className="text-[#00B3EA]">Feedback</span>, Real{" "}
                 <span className="text-[#00B3EA]">Trust</span>
               </span>
 
-              <span className="text-lg text-gray-600">
+              <span className="text-base md:text-lg text-gray-600">
                 Our commitment to fairness, transparency, and efficiency speaks
-                for itself. <br /> But don't just take our word for it see what
-                our clients have to say about their experience with us!
+                for itself. <br className="hidden md:block" /> But don't just
+                take our word for it see what our clients have to say about
+                their experience with us!
               </span>
             </div>
           </AnimatedElement>
@@ -305,8 +309,35 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="py-12">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 md:px-0">
+          <div
+            className="container mx-auto px-4 md:px-12 bg-cover bg-center grid grid-cols-1 md:grid-cols-2 py-12 rounded-lg gap-6"
+            style={{ backgroundImage: `url(${BGHomeImg.src})` }}
+          >
+            <div className="flex flex-col gap-4">
+              <span className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl text-white">
+                Simplify Your Elections
+              </span>
+              <span className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl text-[#E1FF00]">
+                Contact us Today!
+              </span>
+            </div>
+            <div className="flex flex-col md:flex-row justify-end mt-4 gap-4">
+              <Button className="bg-[#88D200] hover:bg-[#E1FF00]/80 text-xl md:text-3xl font-bold tracking-tighter sm:text-4xl text-white rounded-lg px-4 md:px-8 h-16 md:h-20 w-full md:w-auto">
+                <Link href="/request-proposal">Request Proposal</Link>
+              </Button>
+              <Button className="bg-transparent hover:bg-[#E1FF00]/80 border border-2 border-white text-xl md:text-3xl font-bold tracking-tighter sm:text-4xl text-white rounded-lg px-4 md:px-8 h-16 md:h-20 w-full md:w-auto">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="container mx-auto text-center px-4 md:px-0">
           <AnimatedElement>
             <div className="flex flex-col gap-4">
               <span className="text-center text-3xl font-bold">

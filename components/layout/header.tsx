@@ -35,7 +35,7 @@ export function Header() {
   return (
     <AnimatePresence>
       <motion.header
-        className="mt-8 absolute left-0 right-0"
+        className="mt-8 absolute left-0 right-0 px-4 md:px-0"
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
