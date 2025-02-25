@@ -35,14 +35,16 @@ export function Header() {
   return (
     <AnimatePresence>
       <motion.header
-        className={`border-b bg-white ${
-          isScrolled ? "fixed top-0 left-0 right-0 shadow-md z-50" : ""
-        }`}
+        className="mt-8 absolute left-0 right-0"
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="container mx-auto px-4 py-4">
+        <div
+          className={`container mx-auto px-4 py-4 bg-white border rounded-2xl shadow-md z-50 ${
+            isScrolled ? "fixed left-0 right-0" : "relative"
+          }`}
+        >
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-2">
               <Image
@@ -150,9 +152,15 @@ export function Header() {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <Button asChild variant="default">
+              <Button
+                asChild
+                variant="default"
+                className="h-10 bg-gradient-to-r from-primary/70 to-primary"
+              >
                 <Link href="/request-info">
-                  <Send className="w-4 h-4" />
+                  <div className="flex items-center rounded-full bg-white px-1 py-1">
+                    <Send className="text-primary" />
+                  </div>
                   Request Info
                 </Link>
               </Button>

@@ -53,7 +53,7 @@ export default function RootLayout({
       <body className="font-sans">
         <LoadingProvider>
           <Header />
-          <main className="min-h-screen pt-[60px]">{children}</main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
           <ScrollToTop />
           <Toaster />

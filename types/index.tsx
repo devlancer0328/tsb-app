@@ -5,6 +5,9 @@ import Link from "next/link";
 import { HandshakeIcon, MapPin } from "lucide-react";
 
 import { Award } from "lucide-react";
+import MaleAvatar from "@/app/assets/img/avatars/male.png";
+import MaleAvatar2 from "@/app/assets/img/avatars/male2.png";
+import FemaleAvatar from "@/app/assets/img/avatars/female1.png";
 
 export const FEATURES = [
   "Annual Meeting Elections",
@@ -55,8 +58,7 @@ export const FAQs = [
         >
           Civ. Code § 5110(d)
         </Link>
-         Inspectors must perform a long list of duties as outlined in civil
-        code.
+        Inspectors must perform a long list of duties as outlined in civil code.
       </>
     ),
   },
@@ -127,6 +129,37 @@ export const HIGHLIGHTS = [
   },
 ];
 
+export const FEEDBACK = [
+  {
+    name: "James Tans",
+    role: "Entrepreneur",
+    avatar: MaleAvatar,
+    description:
+      "The Secret Ballot made our HOA election seamless and stress-free The process was fair, secure, and easy for our members. Highly recommend!",
+  },
+  {
+    name: "Savansa Mita",
+    role: "CTNS Team Lead",
+    avatar: FemaleAvatar,
+    description:
+      "Clear instructions, easy access, and real-time updates .The Secret Ballot transformed our election process into a smooth experience!",
+  },
+  {
+    name: "Andrew Bare",
+    role: "Rotatory Clubs",
+    avatar: MaleAvatar2,
+    description:
+      "A trustworthy election service that delivers on its promises! Fair, efficient, and incredibly well organized",
+  },
+  {
+    name: "Savansa Mita",
+    role: "CTNS Team Lead",
+    avatar: FemaleAvatar,
+    description:
+      "Clear instructions, easy access, and real-time updates .The Secret Ballot transformed our election process into a smooth experience!",
+  },
+];
+
 export const PARTNERSHIPS = [
   {
     icon: Award,
@@ -142,6 +175,32 @@ export const PARTNERSHIPS = [
     icon: Calendar,
     title: "Always Current",
     description: "Regular attendance at CAI and CACM events",
+  },
+];
+
+export const SERVICES = [
+  {
+    title: "Annual Meeting Elections",
+    description:
+      "Conducting fair and transparent elections for HOA board members",
+  },
+  {
+    title: "Amendments to Governing Documents",
+    description: "Managing votes on updates to bylaws, CC&Rs, and HOA policies",
+  },
+  {
+    title: "Special Assessment Approval",
+    description:
+      "Facilitating approval processes for special community assessments",
+  },
+  {
+    title: "Approval of Increase in Assessments",
+    description: "Ensuring smooth voting for assessment rate changes",
+  },
+  {
+    title: "Recall of the Board",
+    description:
+      "Organizing and overseeing the process for board member removal",
   },
 ];
 

@@ -1,22 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Users,
-  Vote,
-  Shield,
-  ExternalLink,
-  Check,
-  Calendar,
-  HandshakeIcon,
-  Award,
-  MapPin,
-  Building2,
-} from "lucide-react";
+import { ExternalLink, CheckCircle, Quote } from "lucide-react";
 import { AnimatedElement } from "@/components/ui/animated-element";
-import { FeatureSection } from "@/components/shared/feature-section";
 import {
   Accordion,
   AccordionContent,
@@ -25,47 +14,98 @@ import {
 } from "@/components/ui/accordion";
 
 import { motion, AnimatePresence } from "framer-motion";
-
-import { FEATURES, HIGHLIGHTS, PARTNERSHIPS, FAQs } from "@/types";
+import { FEATURES, FAQs, SERVICES, FEEDBACK } from "@/types";
+import HomeHerosImg from "@/app/assets/img/home-heros.png";
+import HomeHerosImg1 from "@/app/assets/img/home-heros-1.png";
+import HomeHerosImg2 from "@/app/assets/img/home-heros-2.png";
+import HomeHerosImg3 from "@/app/assets/img/home-heros-3.png";
+import HomeHerosImg4 from "@/app/assets/img/home-heros-4.png";
+import HomeHerosImg5 from "@/app/assets/img/home-heros-5.png";
+import HomeAboutUsImg from "@/app/assets/img/home-aboutus.png";
+import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselApi,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const AnimatedAccordionContent = motion(AccordionContent);
 
 export default function Home() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [api, setApi] = useState<CarouselApi | undefined>();
+
+  const heroImages = [
+    HomeHerosImg1,
+    HomeHerosImg2,
+    HomeHerosImg3,
+    HomeHerosImg4,
+    HomeHerosImg5,
+  ];
+
+  useEffect(() => {
+    if (!api) return;
+
+    api.on("select", () => {
+      setCurrentSlide(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
     <>
-      <section className="bg-gradient-to-b from-white to-sky-50">
+      <section className="bg-gradient-to-br from-[#E6F7FF] to-white pt-[120px]">
         <div className="container mx-auto px-4 py-16 md:py-24">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <AnimatedElement>
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                Professional Election Services for{" "}
-                <span className="text-primary">Homeowner Associations</span>
-              </h1>
-            </AnimatedElement>
-            <AnimatedElement delay={0.2}>
-              <p className="text-xl text-muted-foreground">
-                We ensure your elections are conducted fairly and efficiently,
-                making any election seem effortless.
-              </p>
-            </AnimatedElement>
-            <AnimatedElement delay={0.4}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" asChild>
-                  <Link
-                    href="/request-proposal"
+          <div className="mx-auto space-y-12 grid grid-cols-1 md:grid-cols-2 text-center md:text-left">
+            <div className="flex flex-col gap-8 mt-4 md:mt-2">
+              <AnimatedElement>
+                <span className="inline-block text-[#0082AA] bg-[#00B3EA]/10 px-4 py-2 rounded-full text-lg font-bold">
+                  Simplifying Elections. Ensuring Trust
+                </span>
+              </AnimatedElement>
+              <AnimatedElement>
+                <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+                  Professional{" "}
+                  <span className="text-[#00B3EA]">Election Services</span>{" "}
+                  <br className="hidden md:block" />
+                  for Homeowner Associations
+                </h1>
+              </AnimatedElement>
+              <AnimatedElement delay={0.2}>
+                <p className="text-lg text-gray-600">
+                  We ensure your elections are conducted fairly and efficiently,
+                  making any election seem effortless.
+                </p>
+              </AnimatedElement>
+              <AnimatedElement delay={0.4}>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    size="lg"
+                    className="bg-[#00B3EA] hover:bg-[#0082AA] text-white rounded-full px-8"
+                    asChild
                   >
-                    Request Proposal
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link
-                    href="/services"
-                  >
-                    Learn More
-                  </Link>
-                </Button>
-              </div>
-            </AnimatedElement>
+                    <Link href="/request-proposal">Get Started</Link>
+                  </Button>
+                </div>
+              </AnimatedElement>
+            </div>
+            <div className="relative order-first md:order-last">
+              <AnimatedElement>
+                <div className="relative z-10">
+                  <div className="absolute -right-4 -top-4 w-[80%] h-[80%] bg-[#00B3EA] rounded-full"></div>
+                  <div className="relative z-20 rounded-[2rem] overflow-hidden">
+                    <Image
+                      src={HomeHerosImg}
+                      alt="Election Services Hero Image"
+                      className="w-full"
+                      priority
+                    />
+                  </div>
+                </div>
+              </AnimatedElement>
+            </div>
           </div>
         </div>
       </section>
@@ -78,193 +118,209 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <motion.div
-              className="space-y-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="flex flex-row items-center gap-3 mb-8">
-                <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  About Us
-                </h2>
-                <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
+            <div className="flex flex-col md:flex-row gap-8 md:gap-4">
+              <div className="w-full md:w-auto">
+                <Image
+                  src={HomeAboutUsImg}
+                  alt="About The Secret Ballot"
+                  width={500}
+                  height={500}
+                  className="w-full rounded-lg"
+                />
               </div>
-              <p className="text-xl text-muted-foreground">
-                Bringing effortless election services to homeowner associations
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="grid gap-6 md:grid-cols-3"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              {HIGHLIGHTS.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                >
-                  <Card className="h-full">
-                    <CardContent className="p-6 space-y-2 flex flex-col items-center">
-                      <div className="rounded-full bg-primary/10 p-3">
-                        <item.icon className="h-8 w-8 text-primary" />
-                      </div>
-                      <h3 className="font-semibold text-lg">{item.title}</h3>
-                      <p className="text-muted-foreground text-center">
-                        {item.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              className="space-y-6 text-lg leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              <p>
-                At The Secret Ballot we guarantee to bring your association
-                customized services and provide an{" "}
-                <span className="italic">effortless</span> process to all your
-                voting needs. Elections will be held fairly and in guidance with
-                the laws of the state of California and the governing documents
-                and election rules of each individual association.
-              </p>
-
-              <p>
-                We love everything San Diego, especially the mountains in
-                Alpine. We are excited to provide election services to
-                associations across San Diego County and surrounding areas.
-              </p>
-
-              <p>
-                The Secret Ballot is committed to always stay informed and up to
-                date with the ever changing laws that apply to HOA elections and
-                voting guidelines. As such, we are industry partners and members
-                of the Community Associations Institute (CAI) and the California
-                Association of Community Managers (CACM).
-              </p>
-            </motion.div>
-
-            {/* Partnerships */}
-            <motion.div
-              className="grid gap-6 md:grid-cols-3"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              {PARTNERSHIPS.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 + index * 0.1 }}
-                >
-                  <Card className="h-full">
-                    <CardContent className="p-6 space-y-2 flex flex-col items-center">
-                      <div className="rounded-full bg-primary/10 p-3">
-                        <item.icon className="h-8 w-8 text-primary" />
-                      </div>
-                      <h3 className="font-semibold text-lg">{item.title}</h3>
-                      <p className="text-muted-foreground text-center">
-                        {item.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Closing Statement */}
-            <motion.div
-              className="text-center bg-muted rounded-lg p-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-            >
-              <p className="text-lg font-medium">
-                We look forward to working with our clients, their board
-                members, management and members!
-              </p>
-            </motion.div>
+              <div className="flex flex-col gap-4 p-4 md:p-6 w-full">
+                <AnimatedElement>
+                  <span className="inline-block text-[#0082AA] bg-[#00B3EA]/10 px-4 py-2 rounded-full text-lg font-bold">
+                    About us "The Secret Ballot"
+                  </span>
+                </AnimatedElement>
+                <AnimatedElement>
+                  <p className="text-lg text-gray-600">
+                    At The Secret Ballot, we make HOA elections fair,
+                    transparent, and hassle-free. From ballot preparation to
+                    vote counting, we handle everything with integrity. Whether
+                    it's board elections, bylaw changes, or special assessments
+                    we've got you covered!
+                  </p>
+                </AnimatedElement>
+                <ul className="grid gap-3">
+                  {FEATURES.map((feature, i) => (
+                    <motion.li
+                      key={feature}
+                      className="flex items-center gap-2"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: i * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      {feature}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
-      <div className="container mx-auto px-4">
-        <FeatureSection features={FEATURES} />
-      </div>
       <section className="py-12">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {[
-              {
-                icon: Check,
-                title: "Full Election Services",
-                description:
-                  "Complete election management including ballot preparation, counting, and documentation.",
-              },
-              {
-                icon: Users,
-                title: "All Association Sizes",
-                description:
-                  "We work with associations of all sizes, ensuring every election gets the attention it deserves.",
-              },
-              {
-                icon: Vote,
-                title: "eVoting Platform",
-                description:
-                  "Modern electronic voting solutions integrated with traditional methods for maximum flexibility.",
-              },
-              {
-                icon: Shield,
-                title: "Secure & Compliant",
-                description:
-                  "All services comply with civil code requirements and maintain election integrity.",
-              },
-            ].map((item, index) => (
-              <AnimatedElement key={item.title} delay={0.1 * index}>
-                <Card>
-                  <CardContent className="pt-6 flex flex-col items-center gap-4">
-                    <div className="rounded-full bg-primary/10 p-3">
-                      <item.icon className="h-8 w-8 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-bold">{item.title}</h3>
-                    <p className="text-muted-foreground text-center">
-                      {item.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </AnimatedElement>
-            ))}
-          </motion.div>
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex flex-col gap-4">
+            <span className="text-center text-3xl font-bold">
+              Our <span className="text-[#00B3EA]">Trusted</span> Voting{" "}
+              <span className="text-[#00B3EA]">Solutions</span> We offer
+            </span>
+            <span className="text-lg text-gray-600">
+              From ballot preparation to vote counting, we ensure a seamless and
+              transparent election process <br />
+              Our expert services guarantee fairness, security, and compliance
+              for every vote
+            </span>
+          </div>
+          <div className="bg-[#00B3EA]/10 rounded-lg p-4 mt-4 flex flex-row gap-40 h-[500px]">
+            <div className="flex flex-col gap-4 flex-1 justify-center">
+              {SERVICES.map((service, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col gap-4 text-left cursor-pointer"
+                  onClick={() => setSelectedIndex(index)}
+                >
+                  <span
+                    className={`text-xl font-bold ${
+                      selectedIndex === index
+                        ? "text-[#0073A0]"
+                        : "text-gray-600"
+                    }`}
+                  >
+                    {service.title}
+                  </span>
+                  <span
+                    className={`text-lg ${
+                      selectedIndex === index
+                        ? "text-[#0073A0] block"
+                        : "text-gray-600 hidden"
+                    }`}
+                  >
+                    {service.description}
+                  </span>
+                  <hr
+                    className={`border-t w-full  ${
+                      selectedIndex === index
+                        ? "border-[#0073A0] border-2"
+                        : "border-gray-600"
+                    }`}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col gap-4 justify-end w-[600px]">
+              <div className="relative bg-[#0080B2] rounded-t-3xl p-4 h-[300px] w-[600px]" />
+              <Image
+                src={heroImages[selectedIndex]}
+                alt="Election Services Hero Image"
+                width={600}
+                height={400}
+                className="rounded-lg absolute"
+              />
+            </div>
+          </div>
         </div>
       </section>
-
       <section className="py-12">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 text-center">
           <AnimatedElement>
-            <div className="flex flex-row items-center gap-3 mb-8">
-              <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                FAQs
-              </h2>
-              <hr style={{ border: "3px solid #19b6da", width: "50px" }} />
+            <div className="flex flex-col gap-4">
+              <span className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                Real <span className="text-[#00B3EA]">Feedback</span>, Real{" "}
+                <span className="text-[#00B3EA]">Trust</span>
+              </span>
+
+              <span className="text-lg text-gray-600">
+                Our commitment to fairness, transparency, and efficiency speaks
+                for itself. <br /> But don't just take our word for it see what
+                our clients have to say about their experience with us!
+              </span>
             </div>
           </AnimatedElement>
-          <div className="mx-auto">
+          <div className="mt-8 bg-[#00B3EA]/10 rounded-lg p-8">
+            <Carousel
+              plugins={[Autoplay({ delay: 3000 })]}
+              className="rounded-lg"
+              setApi={setApi}
+            >
+              <CarouselContent>
+                {FEEDBACK.slice(0, FEEDBACK.length - 2).map((_, index) => (
+                  <CarouselItem key={index}>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {FEEDBACK.slice(index, index + 3).map((feedback, i) => (
+                        <Card key={i} className="h-full">
+                          <CardContent className="p-6 flex flex-col gap-4">
+                            <div className="flex gap-4">
+                              <div className="flex flex-col">
+                                <div className="flex w-full gap-2 items-end justify-end">
+                                  <Quote className="h-8 w-8 text-primary mb-4" />
+                                </div>
+                                <p className="text-gray-600 italic text-lg text-left h-[150px]">
+                                  "{feedback.description}"
+                                </p>
+                                <div className="flex flex-row gap-4 py-4">
+                                  <div className="h-12 w-12 rounded-full bg-[#00B3EA]/10 flex items-center justify-center">
+                                    <Image
+                                      src={feedback.avatar}
+                                      alt={`${feedback.name}'s Avatar`}
+                                      width={48}
+                                      height={48}
+                                    />
+                                  </div>
+                                  <div className="flex flex-col">
+                                    <span className="font-bold">
+                                      {feedback.name}
+                                    </span>
+                                    <span className="text-sm text-gray-600">
+                                      {feedback.role}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-2 mt-4">
+                {FEEDBACK.slice(0, FEEDBACK.length - 2).map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      currentSlide === index ? "bg-[#00B3EA]" : "bg-gray-300"
+                    }`}
+                    onClick={() => api?.scrollTo(index)}
+                  />
+                ))}
+              </div>
+            </Carousel>
+          </div>
+        </div>
+      </section>
+      <section className="py-12">
+        <div className="container mx-auto px-4 text-center">
+          <AnimatedElement>
+            <div className="flex flex-col gap-4">
+              <span className="text-center text-3xl font-bold">
+                Frequently Asked{" "}
+                <span className="text-[#00B3EA]">Questions</span>
+              </span>
+              <span className="text-lg text-gray-600">
+                Got questions? We've got answers! Explore our FAQs to learn more
+                about our election services, <br /> voting process, and how we
+                ensure fairness and security in every election
+              </span>
+            </div>
+          </AnimatedElement>
+          <div className="mx-auto mt-4">
             <Card className="p-6">
               <Accordion type="single" collapsible className="space-y-4 mb-6">
                 {FAQs.map((faq, index) => (
@@ -288,7 +344,7 @@ export default function Home() {
                 ))}
               </Accordion>
               <motion.div
-                className="py-4 p-6 bg-muted rounded-lg"
+                className="py-4 p-6 bg-muted rounded-lg text-left"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
