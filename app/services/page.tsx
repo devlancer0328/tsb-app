@@ -113,7 +113,7 @@ export default function ServicesPage() {
       <section className="py-12">
         <div className="container mx-auto text-center px-4 md:px-0">
           <div className="flex flex-col gap-4">
-            <span className="text-center text-2xl md:text-3xl font-bold">
+            <span className="text-center text-2xl md:text-5xl font-bold">
               Industries <span className="text-[#00B3EA]">We Support</span>
             </span>
             <span className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
@@ -172,7 +172,7 @@ export default function ServicesPage() {
       <section className="py-12">
         <div className="container mx-auto text-center px-4 md:px-0">
           <div className="flex flex-col gap-4">
-            <span className="text-center text-2xl md:text-3xl font-bold">
+            <span className="text-center text-2xl md:text-5xl font-bold">
               Our Services
             </span>
             <span className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
@@ -208,7 +208,7 @@ export default function ServicesPage() {
 
       <div className="mb-16 py-12">
         <div className="flex flex-col gap-4 text-center">
-          <span className="text-center text-2xl md:text-3xl font-bold">
+          <span className="text-center text-2xl md:text-5xl font-bold">
             <span className="text-[#00B3EA]">eVoting</span> Platform
           </span>
           <span className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">

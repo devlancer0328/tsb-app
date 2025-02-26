@@ -168,7 +168,7 @@ export default function Home() {
       <section className="py-12">
         <div className="container mx-auto text-center px-4 md:px-0">
           <div className="flex flex-col gap-4">
-            <span className="text-center text-2xl md:text-3xl font-bold">
+            <span className="text-center text-2xl md:text-5xl font-bold">
               Our <span className="text-[#00B3EA]">Trusted</span> Voting{" "}
               <span className="text-[#00B3EA]">Solutions</span> We offer
             </span>
@@ -178,7 +178,6 @@ export default function Home() {
               Our expert services guarantee fairness, security, and compliance
               for every vote
             </span>
-            Solutions
           </div>
           <div className="bg-[#00B3EA]/10 rounded-lg p-4 mt-4 flex flex-col md:flex-row md:gap-40 h-auto md:h-[500px]">
             <div className="flex flex-col gap-4 flex-1 justify-center">
@@ -234,7 +233,7 @@ export default function Home() {
         <div className="container mx-auto text-center px-4 md:px-0">
           <AnimatedElement>
             <div className="flex flex-col gap-4">
-              <span className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl">
+              <span className="text-2xl md:text-5xl font-bold tracking-tighter sm:text-4xl">
                 Real <span className="text-[#00B3EA]">Feedback</span>, Real{" "}
                 <span className="text-[#00B3EA]">Trust</span>
               </span>
@@ -341,7 +340,7 @@ export default function Home() {
         <div className="container mx-auto text-center px-4 md:px-0">
           <AnimatedElement>
             <div className="flex flex-col gap-4">
-              <span className="text-center text-3xl font-bold">
+              <span className="text-center text-5xl font-bold">
                 Frequently Asked{" "}
                 <span className="text-[#00B3EA]">Questions</span>
               </span>
@@ -381,9 +380,9 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <h3 className="text-lg font-semibold mb-2">
+                <span className="text-lg font-semibold mb-2">
                   Still have questions?
-                </h3>
+                </span>
                 <p className="text-muted-foreground mb-4">
                   If you couldn't find the answer you were looking for, please
                   feel free to contact us.
