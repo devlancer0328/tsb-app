@@ -41,8 +41,8 @@ export function Header() {
         transition={{ duration: 0.3 }}
       >
         <div
-          className={`container mx-auto px-4 py-4 bg-white border rounded-2xl shadow-md z-50 ${
-            isScrolled ? "fixed left-0 right-0" : "relative"
+          className={`container mx-auto px-4 py-4 bg-white rounded-2xl shadow-md z-50 ${
+            isScrolled ? "fixed left-0 right-0 px-4" : "relative"
           }`}
         >
           <div className="flex items-center justify-between">
@@ -71,48 +71,13 @@ export function Header() {
                     </Link>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        <li className="row-span-3">
-                          <NavigationMenuLink asChild>
-                            <a
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md relative bg-cover bg-center hover:scale-105 transition-all duration-300"
-                              style={{
-                                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${ElectionImg.src})`,
-                              }}
-                              href="/services"
-                            >
-                              <div className="mb-2 mt-4 text-lg font-medium text-white">
-                                Election Services
-                              </div>
-                              <p className="text-sm leading-tight text-gray-200">
-                                Comprehensive election management for HOAs of
-                                all sizes
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </li>
-                        <ListItem
-                          href="https://e-voting-ruby.vercel.app"
-                          title="eVoting Platform"
-                        >
-                          Secure and convenient online voting solution
-                        </ListItem>
-                        <ListItem
-                          href="/services/consulting"
-                          title="Election Consulting"
-                        >
-                          Expert guidance on election processes and compliance
-                        </ListItem>
-                        <ListItem
-                          href="/services/training"
-                          title="Board Training"
-                        >
-                          Educational programs for HOA board members
-                        </ListItem>
-                      </ul>
-                    </NavigationMenuContent>
+                    <Link href="/services" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Services
+                      </NavigationMenuLink>
+                    </Link>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <Link href="/request-proposal" legacyBehavior passHref>

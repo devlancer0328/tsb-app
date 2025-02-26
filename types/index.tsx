@@ -8,6 +8,20 @@ import { Award } from "lucide-react";
 import MaleAvatar from "@/app/assets/img/avatars/male.png";
 import MaleAvatar2 from "@/app/assets/img/avatars/male2.png";
 import FemaleAvatar from "@/app/assets/img/avatars/female1.png";
+import { AssociationSVG } from "@/app/assets/svg/AssociationSVG";
+import { EducationSVG } from "@/app/assets/svg/EducationSVG";
+import { GovernmentSVG } from "@/app/assets/svg/GovernmentSVG";
+import { CorporateSVG } from "@/app/assets/svg/CorporateSVG";
+import { UnionsSVG } from "@/app/assets/svg/UnionsSVG";
+import { BallotSVG } from "@/app/assets/svg/BallotSVG";
+import { VoterSVG } from "@/app/assets/svg/VoterSVG";
+import { SecureSVG } from "@/app/assets/svg/SecureSVG";
+import { ComplianceSVG } from "@/app/assets/svg/ComplianceSVG";
+import { TabulationSVG } from "@/app/assets/svg/TabulationSVG";
+import { CompletedSVG } from "@/app/assets/svg/CompletedSVG";
+import ReliableSVG from "@/app/assets/svg/ReliableSVG";
+import FlexibleSVG from "@/app/assets/svg/FlexibleSVG";
+import AmazingSVG from "@/app/assets/svg/AmazingSVG";
 
 export const FEATURES = [
   "Annual Meeting Elections",
@@ -235,5 +249,82 @@ export const POSTS = [
     date: "2024-01-30",
     image: "/placeholder.svg?height=200&width=400",
     slug: "common-election-mistakes",
+  },
+];
+
+export const INDUSTRY_LIST = [
+  {
+    name: "Professional\nAssociations",
+    icon: <AssociationSVG />,
+  },
+  {
+    name: "Education",
+    icon: <EducationSVG />,
+  },
+  {
+    name: "Governments",
+    icon: <GovernmentSVG />,
+  },
+  {
+    name: "Corporate &\nShareholder",
+    icon: <CorporateSVG />,
+  },
+  {
+    name: "Unions",
+    icon: <UnionsSVG />,
+  },
+];
+
+export const SERVICES_LIST = [
+  {
+    title: "Ballot preparation\nand distribution",
+    icon: <BallotSVG />,
+    bg: "@/app/assets/img/service-img1.png",
+  },
+  {
+    title: "Voter eligibility\nverification",
+    icon: <VoterSVG />,
+    bg: "@/app/assets/img/service-img2.png",
+  },
+  {
+    title: "Secure ballot collection\nand counting",
+    icon: <SecureSVG />,
+    bg: "@/app/assets/img/service-img3.png",
+  },
+  {
+    title: "Compliance with state\nlaws and association",
+    icon: <ComplianceSVG />,
+    bg: "@/app/assets/img/service-img4.png",
+  },
+  {
+    title: "Results tabulation\nand reporting",
+    icon: <TabulationSVG />,
+    bg: "@/app/assets/img/service-img5.png",
+  },
+  {
+    title: "Completed election\ndocumentation",
+    icon: <CompletedSVG />,
+    bg: "@/app/assets/img/service-img6.png",
+  },
+];
+
+export const EVOTING_FEATURES = [
+  {
+    title: "Secure & Reliable",
+    description:
+      "Third-party audited security and a 100% availability guarantee for reliable elections",
+    icon: <ReliableSVG />,
+  },
+  {
+    title: "Flexible & Easy to Use",
+    description:
+      "Easy voting for users, with powerful and intuitive tools for administrators",
+    icon: <FlexibleSVG />,
+  },
+  {
+    title: "Amazing Service",
+    description:
+      "Friendly, professional support available 24/7, all year round",
+    icon: <AmazingSVG />,
   },
 ];

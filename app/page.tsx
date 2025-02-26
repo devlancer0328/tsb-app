@@ -164,6 +164,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
       <section className="py-12">
         <div className="container mx-auto text-center px-4 md:px-0">
           <div className="flex flex-col gap-4">
