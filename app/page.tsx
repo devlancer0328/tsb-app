@@ -31,10 +31,13 @@ import {
   CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { usePageLoading } from "@/hooks/use-page-loading";
 
 const AnimatedAccordionContent = motion(AccordionContent);
 
 export default function Home() {
+  usePageLoading();
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [api, setApi] = useState<CarouselApi | undefined>();

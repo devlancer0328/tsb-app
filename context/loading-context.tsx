@@ -1,8 +1,8 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { createContext, useContext, useState } from "react";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 const LoadingAnimation = dynamic(
   () =>
@@ -26,20 +26,13 @@ const LoadingContext = createContext<LoadingContextType>({
 
 export function LoadingProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  // Reset loading state on route change
-  useEffect(() => {
-    setIsLoading(true);
-    const timeout = setTimeout(() => setIsLoading(false), 500);
-    return () => clearTimeout(timeout);
-  }, [pathname, searchParams]);
 
   return (
     <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
-      {isLoading && <LoadingAnimation />}
-      {children}
+      <Suspense fallback={null}>
+        {isLoading && <LoadingAnimation />}
+        {children}
+      </Suspense>
     </LoadingContext.Provider>
   );
 }

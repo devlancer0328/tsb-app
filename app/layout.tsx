@@ -2,6 +2,7 @@ import { Inter, Merriweather } from "next/font/google";
 import dynamic from "next/dynamic";
 import { LoadingProvider } from "@/context/loading-context";
 import "./globals.css";
+import { Suspense } from "react";
 
 const Header = dynamic(
   () => import("@/components/layout/header").then((mod) => mod.Header),
@@ -51,13 +52,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
       <body className="font-sans">
-        <LoadingProvider>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-          <ScrollToTop />
-          <Toaster />
-        </LoadingProvider>
+        <Suspense fallback={null}>
+          <LoadingProvider>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+            <ScrollToTop />
+            <Toaster />
+          </LoadingProvider>
+        </Suspense>
       </body>
     </html>
   );
