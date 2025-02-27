@@ -8,6 +8,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,7 +23,6 @@ export function ContactForm() {
     event.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
@@ -29,42 +35,91 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <Label htmlFor="first-name">First name</Label>
-            <Input id="first-name" required />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="last-name">Last name</Label>
-            <Input id="last-name" required />
-          </div>
+    <form onSubmit={handleSubmit} className="space-y-8">
+      <div className="space-y-8">
+        <div className="space-y-4">
+          <Label htmlFor="full-name" className="text-xl font-regular">
+            Full Name
+          </Label>
+          <Input
+            id="full-name"
+            required
+            className="text-xl font-regular h-14 bg-gray-100"
+            style={{ fontSize: "1.2rem" }}
+            placeholder="Enter your name"
+          />
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" required />
+        <div className="space-y-4">
+          <Label htmlFor="email" className="text-xl font-regular">
+            Email
+          </Label>
+          <Input
+            id="email"
+            type="email"
+            required
+            className="text-xl font-regular h-14 bg-gray-100"
+            style={{ fontSize: "1.2rem" }}
+            placeholder="Enter your email"
+          />
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="phone">Phone</Label>
-          <Input id="phone" type="tel" />
+        <div className="space-y-4">
+          <Label htmlFor="phone" className="text-xl font-regular">
+            Phone
+          </Label>
+          <Input
+            id="phone"
+            type="tel"
+            required
+            className="text-xl font-regular h-14 bg-gray-100"
+            style={{ fontSize: "1.2rem" }}
+            placeholder="Enter your phone number"
+          />
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="message">Message</Label>
+        <div className="space-y-4">
+          <Label htmlFor="information" className="text-xl font-regular">
+            Choose the information
+          </Label>
+          <Select required defaultValue="voting-packet">
+            <SelectTrigger className="h-14 bg-white">
+              <SelectValue placeholder="Select information" />
+            </SelectTrigger>
+            <SelectContent className="bg-white">
+              <SelectItem value="voting-packet">
+                <span className="text-lg">Your Voting Packet</span>
+              </SelectItem>
+              <SelectItem value="about-company">
+                <span className="text-lg">About our Company</span>
+              </SelectItem>
+              <SelectItem value="general">
+                <span className="text-lg">General Questions</span>
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-4">
+          <Label htmlFor="message" className="text-xl font-regular">
+            Message
+          </Label>
           <Textarea
             id="message"
             required
-            className="min-h-[300px]"
+            className="bg-gray-100 min-h-32"
             placeholder="How can we help you?"
+            style={{ fontSize: "1.2rem" }}
           />
         </div>
       </div>
 
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
-        {isSubmitting ? "Sending..." : "Send Message"}
+      <Button
+        type="submit"
+        className="w-full h-14 text-xl font-regular"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Sending..." : "Submit"}
       </Button>
     </form>
   );
