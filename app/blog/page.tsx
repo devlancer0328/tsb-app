@@ -13,9 +13,11 @@ import { ArrowRightIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { usePageLoading } from "@/hooks/use-page-loading";
 const AnimatedCard = motion(Card);
 
 export default function BlogPage() {
+  usePageLoading();
   const [currentPage, setCurrentPage] = useState(1);
   const [activeFilter, setActiveFilter] = useState("All");
   const postsPerPage = 6;

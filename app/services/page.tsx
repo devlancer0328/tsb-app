@@ -19,6 +19,7 @@ import CardServiceImg6 from "@/app/assets/img/service-img6.png";
 
 import Marquee from "react-fast-marquee";
 import { INDUSTRY_LIST, SERVICES_LIST, EVOTING_FEATURES } from "@/types";
+import { usePageLoading } from "@/hooks/use-page-loading";
 const AnimatedCard = motion(Card);
 
 const CardServiceImg = [
@@ -31,6 +32,7 @@ const CardServiceImg = [
 ];
 
 export default function ServicesPage() {
+  usePageLoading();
   return (
     <div className="container mx-auto px-4 py-12 md:px-0 pt-[140px] md:pt-[160px]">
       <div className="mx-auto space-y-12 grid grid-cols-1 md:grid-cols-2 text-center md:text-left bg-[#EBF9FF] rounded-2xl pl-4 md:pl-8">

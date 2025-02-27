@@ -11,7 +11,7 @@ export function usePageLoading() {
 
   useEffect(() => {
     setIsLoading(true);
-    const timeout = setTimeout(() => setIsLoading(false), 500);
+    const timeout = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timeout);
   }, [pathname, searchParams, setIsLoading]);
 }

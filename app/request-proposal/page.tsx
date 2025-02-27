@@ -1,9 +1,10 @@
 "use client";
 
 import { RequestProposalForm } from "@/components/shared/request-proposal-form";
-import { Card } from "@/components/ui/card";
+import { usePageLoading } from "@/hooks/use-page-loading";
 
 export default function RequestProposalPage() {
+  usePageLoading();
   return (
     <div className="container mx-auto px-4 py-12 md:px-0">
       <div className="max-w-9xl mx-auto mt-[120px] md:mt-[160px]">

@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedElement } from "@/components/ui/animated-element";
+import { usePageLoading } from "@/hooks/use-page-loading";
 
 export default function About() {
+  usePageLoading();
   return (
     <div className="container py-12">
       <div className="max-w-4xl mx-auto space-y-12">
