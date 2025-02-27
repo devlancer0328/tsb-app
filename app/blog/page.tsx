@@ -32,21 +32,21 @@ export default function BlogPage() {
   const categories = ["All", "Voting", "Elections", "Meetings"];
 
   return (
-    <div className="container mx-auto px-4 py-12 md:px-0 pt-[100px] md:pt-[160px]">
+    <div className="container mx-auto px-4 py-12 md:px-0 pt-[140px] md:pt-[160px]">
       <div className="mx-auto space-y-12 grid grid-cols-1 md:grid-cols-2 text-center md:text-left bg-[#EBF9FF] rounded-2xl pl-4 md:pl-8">
         <div className="flex flex-col gap-8 justify-center">
           <AnimatedElement>
-            <span className="inline-block text-[#0082AA] bg-[#00B3EA]/10 px-4 py-2 rounded-full text-base font-bold">
-              Request Proposal
+            <span className="inline-block text-[#0082AA] bg-[#00B3EA]/10 px-4 py-2 rounded-full text-base font-bold mt-4 md:mt-0">
+              Insights & Updates
             </span>
           </AnimatedElement>
           <AnimatedElement>
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-[#1A1A1A]">
-              Customized Election Services for Your Needs
+              Your Guide to Fair Elections
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.2}>
-            <p className="text-lg text-[#666666]">
+            <p className="text-lg text-[#666666] mb-4 md:mb-0">
               Get a tailored election solution designed for fairness, security,
               and efficiency
             </p>

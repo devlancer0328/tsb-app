@@ -1,34 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import {
-  CheckCircle,
-  Users,
-  Vote,
-  Shield,
-  BarChart,
-  FileText,
-} from "lucide-react";
+import { Card } from "@/components/ui/card";
+
 import { AnimatedElement } from "@/components/ui/animated-element";
 import { motion } from "framer-motion";
-import Autoplay from "embla-carousel-autoplay";
-import ServiceImg from "@/app/assets/img/service_2.jpg";
-import ServiceImg2 from "@/app/assets/img/service_3.jpg";
-import ServiceImg3 from "@/app/assets/img/service_1.jpg";
 
 import BGServiceVoteImg from "@/app/assets/img/services-vote.png";
 import BGServiceImg1 from "@/app/assets/img/services-bg1.png";
@@ -56,11 +32,11 @@ const CardServiceImg = [
 
 export default function ServicesPage() {
   return (
-    <div className="container mx-auto px-4 py-12 md:px-0 pt-[100px] md:pt-[160px]">
+    <div className="container mx-auto px-4 py-12 md:px-0 pt-[140px] md:pt-[160px]">
       <div className="mx-auto space-y-12 grid grid-cols-1 md:grid-cols-2 text-center md:text-left bg-[#EBF9FF] rounded-2xl pl-4 md:pl-8">
         <div className="flex flex-col gap-8 justify-center">
           <AnimatedElement>
-            <span className="inline-block text-[#0082AA] bg-[#00B3EA]/10 px-4 py-2 rounded-full text-base font-bold">
+            <span className="inline-block text-[#0082AA] bg-[#00B3EA]/10 px-4 py-2 rounded-full text-base font-bold mt-4 md:mt-0">
               Insights & Updates
             </span>
           </AnimatedElement>
@@ -70,7 +46,7 @@ export default function ServicesPage() {
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.2}>
-            <p className="text-lg text-[#666666]">
+            <p className="text-lg text-[#666666] mb-4 md:mb-0">
               Get expert tips and updates for a smooth, transparent election
               process
             </p>
@@ -129,13 +105,13 @@ export default function ServicesPage() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 key={index}
-                className="flex-shrink-0 w-[400px] mx-8"
+                className="flex-shrink-0 w-[300px] md:w-[400px] mx-8"
               >
                 <div className="flex flex-row gap-4 p-4 items-center">
-                  <div className="flex flex-col items-center justify-center gap-4 w-24 h-24 bg-gradient-to-br from-[#00A6DD] to-[#005977] rounded-lg p-2">
+                  <div className="flex flex-col items-center justify-center gap-4 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#00A6DD] to-[#005977] rounded-lg p-2">
                     {industry.icon}
                   </div>
-                  <span className="text-2xl font-bold whitespace-pre-line text-center">
+                  <span className="text-xl md:text-2xl font-bold whitespace-pre-line text-center">
                     {industry.name}
                   </span>
                 </div>
@@ -153,15 +129,15 @@ export default function ServicesPage() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 key={index}
-                className="flex-shrink-0 w-[400px] mx-8"
+                className="flex-shrink-0 w-[300px] md:w-[400px] mx-8"
               >
-                <div className="flex flex-row gap-4 p-4 items-center">
-                  <div className="flex flex-col items-center justify-center gap-4 w-24 h-24 bg-gradient-to-br from-[#00A6DD] to-[#005977] rounded-lg p-2">
-                    {industry.icon}
-                  </div>
-                  <span className="text-2xl font-bold whitespace-pre-line text-center">
+                <div className="flex flex-row gap-4 p-4 items-center justify-between">
+                  <span className="flex-1 text-xl md:text-2xl font-bold whitespace-pre-line text-end">
                     {industry.name}
                   </span>
+                  <div className="flex flex-col items-center justify-center gap-4 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#00A6DD] to-[#005977] rounded-lg p-2">
+                    {industry.icon}
+                  </div>
                 </div>
               </AnimatedCard>
             ))}

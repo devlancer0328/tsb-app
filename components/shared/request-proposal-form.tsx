@@ -99,7 +99,7 @@ export function RequestProposalForm() {
                   </div>
                 </RadioGroup>
               </div>
-              <div className="flex flex-row gap-4">
+              <div className="flex flex-col md:flex-row gap-4">
                 <div className="space-y-2">
                   <Label
                     htmlFor="association-name"
@@ -170,7 +170,7 @@ export function RequestProposalForm() {
           </div>
           <div className="flex flex-col gap-4 bg-[#EDFAFF] p-6 rounded-lg">
             <div className="relative bg-gradient-to-r from-[#006584] to-[#00B3EA] rounded-lg h-[140px] flex flex-row justify-between items-center pl-12">
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 items-center md:items-start">
                 <span className="text-[#FAF603] text-2xl font-bold">
                   Simplify Your Elections
                 </span>
@@ -183,13 +183,13 @@ export function RequestProposalForm() {
                 alt="Request Hero"
                 width={350}
                 height={350}
-                className="absolute right-0 bottom-0 object-cover"
+                className="absolute right-0 bottom-0 object-cover hidden md:block"
               />
             </div>
             <Label htmlFor="services" className="text-2xl font-regular">
               Tell us about you
             </Label>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label
                   htmlFor="association-name"
@@ -200,7 +200,7 @@ export function RequestProposalForm() {
                 <Input
                   id="association-name"
                   required
-                  className="bg-white h-10"
+                  className="bg-white h-12"
                   placeholder="Enter your Association Name"
                 />
               </div>
@@ -214,12 +214,12 @@ export function RequestProposalForm() {
                 <Input
                   id="management-company-name"
                   required
-                  className="bg-white h-10"
+                  className="bg-white h-12"
                   placeholder="Enter your company Name"
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label
                   htmlFor="contact-name"
@@ -230,7 +230,7 @@ export function RequestProposalForm() {
                 <Input
                   id="contact-name"
                   required
-                  className="bg-white h-10"
+                  className="bg-white h-12"
                   placeholder="Enter your First and Last Name"
                 />
               </div>
@@ -242,12 +242,12 @@ export function RequestProposalForm() {
                   id="email"
                   type="email"
                   required
-                  className="bg-white h-10"
+                  className="bg-white h-12"
                   placeholder="Enter your Email"
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="phone" className="text-base font-regular">
                   Phone
@@ -256,7 +256,7 @@ export function RequestProposalForm() {
                   id="phone"
                   type="tel"
                   required
-                  className="bg-white h-10"
+                  className="bg-white h-12"
                   placeholder="Enter your Phone Number"
                 />
               </div>
@@ -270,12 +270,12 @@ export function RequestProposalForm() {
                 <Input
                   id="association-address"
                   required
-                  className="bg-white h-10"
+                  className="bg-white h-12"
                   placeholder="Enter your Association Address"
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label
                   htmlFor="membership-meeting-date"
@@ -286,7 +286,7 @@ export function RequestProposalForm() {
                 <Input
                   id="membership-meeting-date"
                   required
-                  className="bg-white h-10"
+                  className="bg-white h-12"
                   placeholder="Enter your Membership Meeting Date"
                 />
               </div>
@@ -298,7 +298,7 @@ export function RequestProposalForm() {
                   id="units"
                   type="number"
                   required
-                  className="bg-white h-10"
+                  className="bg-white h-12"
                   placeholder="Enter your Number of Units"
                 />
               </div>

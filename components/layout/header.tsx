@@ -19,9 +19,11 @@ import ElectionImg from "@/app/assets/img/election.jpg";
 import LogoImg from "@/app/assets/img/logo.png";
 import { Menu, Send } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { usePathname } from "next/navigation";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +66,10 @@ export function Header() {
                   <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
                       <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          pathname === "/" ? "text-primary font-semibold" : ""
+                        )}
                       >
                         Home
                       </NavigationMenuLink>
@@ -73,7 +78,12 @@ export function Header() {
                   <NavigationMenuItem>
                     <Link href="/services" legacyBehavior passHref>
                       <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          pathname === "/services"
+                            ? "text-primary font-semibold"
+                            : ""
+                        )}
                       >
                         Services
                       </NavigationMenuLink>
@@ -82,25 +92,26 @@ export function Header() {
                   <NavigationMenuItem>
                     <Link href="/request-proposal" legacyBehavior passHref>
                       <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          pathname === "/request-proposal"
+                            ? "text-primary font-semibold"
+                            : ""
+                        )}
                       >
                         Request Proposal
                       </NavigationMenuLink>
                     </Link>
                   </NavigationMenuItem>
-                  {/* <NavigationMenuItem>
-                    <Link href="/faqs" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        FAQs
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem> */}
                   <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
                       <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          pathname === "/blog"
+                            ? "text-primary font-semibold"
+                            : ""
+                        )}
                       >
                         Blog
                       </NavigationMenuLink>
@@ -109,7 +120,12 @@ export function Header() {
                   <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
                       <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          pathname === "/contact"
+                            ? "text-primary font-semibold"
+                            : ""
+                        )}
                       >
                         Contact Us
                       </NavigationMenuLink>
@@ -141,40 +157,49 @@ export function Header() {
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[300px]">
                   <div className="flex flex-col space-y-4 mt-6">
-                    <Link href="/" className="text-lg font-medium">
+                    <Link
+                      href="/"
+                      className={cn(
+                        "text-lg font-medium hover:text-primary transition-colors",
+                        pathname === "/" ? "text-primary" : ""
+                      )}
+                    >
                       Home
                     </Link>
-                    <div className="flex flex-col space-y-2">
-                      <p className="text-lg font-medium">Services</p>
-                      <Link href="/services" className="pl-4 text-sm">
-                        Election Services
-                      </Link>
-                      <Link
-                        href="https://e-voting-ruby.vercel.app"
-                        className="pl-4 text-sm"
-                      >
-                        eVoting Platform
-                      </Link>
-                      <Link
-                        href="/services/consulting"
-                        className="pl-4 text-sm"
-                      >
-                        Election Consulting
-                      </Link>
-                      <Link href="/services/training" className="pl-4 text-sm">
-                        Board Training
-                      </Link>
-                    </div>
+                    <Link
+                      href="/services"
+                      className={cn(
+                        "text-lg font-medium hover:text-primary transition-colors",
+                        pathname === "/services" ? "text-primary" : ""
+                      )}
+                    >
+                      Services
+                    </Link>
                     <Link
                       href="/request-proposal"
-                      className="text-lg font-medium"
+                      className={cn(
+                        "text-lg font-medium hover:text-primary transition-colors",
+                        pathname === "/request-proposal" ? "text-primary" : ""
+                      )}
                     >
                       Request Proposal
                     </Link>
-                    <Link href="/blog" className="text-lg font-medium">
+                    <Link
+                      href="/blog"
+                      className={cn(
+                        "text-lg font-medium hover:text-primary transition-colors",
+                        pathname === "/blog" ? "text-primary" : ""
+                      )}
+                    >
                       Blog
                     </Link>
-                    <Link href="/contact" className="text-lg font-medium">
+                    <Link
+                      href="/contact"
+                      className={cn(
+                        "text-lg font-medium hover:text-primary transition-colors",
+                        pathname === "/contact" ? "text-primary" : ""
+                      )}
+                    >
                       Contact Us
                     </Link>
                     <Button asChild variant="default" className="w-full">

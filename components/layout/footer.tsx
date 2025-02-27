@@ -62,7 +62,7 @@ export function Footer() {
                 Blog
               </Link>
               <Link
-                href="/contact-us"
+                href="/contact"
                 className="block hover:text-gray-200 transition-colors"
               >
                 Contact us
