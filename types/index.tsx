@@ -22,6 +22,11 @@ import { CompletedSVG } from "@/app/assets/svg/CompletedSVG";
 import ReliableSVG from "@/app/assets/svg/ReliableSVG";
 import FlexibleSVG from "@/app/assets/svg/FlexibleSVG";
 import AmazingSVG from "@/app/assets/svg/AmazingSVG";
+import BlogImg_1 from "@/app/assets/img/service_2.jpg";
+import BlogImg_2 from "@/app/assets/img/election.jpg";
+import BlogImg_3 from "@/app/assets/img/blog_1.jpg";
+import BlogImg_4 from "@/app/assets/img/service.jpg";
+import BlogImg_5 from "@/app/assets/img/blog_2.jpg";
 
 export const FEATURES = [
   "Annual Meeting Elections",
@@ -224,31 +229,62 @@ export const POSTS = [
     excerpt:
       "Understanding the process and requirements for elections by acclamation in HOA governance.",
     date: "2024-02-15",
-    image: "/placeholder.svg?height=200&width=400",
+    image: BlogImg_2,
     slug: "elections-by-acclamation",
+    category: "Elections",
   },
   {
     title: "SB 323 – How it changes the game",
     excerpt:
       "An analysis of SB 323 and its impact on HOA election procedures in California.",
     date: "2024-02-10",
-    image: "/placeholder.svg?height=200&width=400",
+    image: BlogImg_3,
     slug: "sb-323-changes",
+    category: "Elections",
   },
   {
     title: "The Benefits of Electronic Voting",
     excerpt:
       "Exploring how electronic voting systems are transforming HOA elections.",
     date: "2024-02-05",
-    image: "/placeholder.svg?height=200&width=400",
+    image: BlogImg_4,
     slug: "electronic-voting-benefits",
+    category: "Voting",
   },
   {
     title: "Common Election Mistakes to Avoid",
     excerpt: "Key pitfalls to watch out for during HOA election processes.",
     date: "2024-01-30",
-    image: "/placeholder.svg?height=200&width=400",
+    image: BlogImg_5,
     slug: "common-election-mistakes",
+    category: "Elections",
+  },
+  {
+    title: "Elections by Acclamation",
+    excerpt:
+      "Understanding the process and requirements for elections by acclamation in HOA governance.",
+    date: "2024-02-15",
+    image: BlogImg_1,
+    slug: "elections-by-acclamation",
+    category: "Voting",
+  },
+  {
+    title: "Elections by Acclamation",
+    excerpt:
+      "Understanding the process and requirements for elections by acclamation in HOA governance.",
+    date: "2024-02-15",
+    image: BlogImg_1,
+    slug: "elections-by-acclamation",
+    category: "Meetings",
+  },
+  {
+    title: "Elections by Acclamation",
+    excerpt:
+      "Understanding the process and requirements for elections by acclamation in HOA governance.",
+    date: "2024-02-15",
+    image: BlogImg_1,
+    slug: "elections-by-acclamation",
+    category: "Meetings",
   },
 ];
 

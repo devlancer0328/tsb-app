@@ -61,18 +61,18 @@ export default function ServicesPage() {
         <div className="flex flex-col gap-8 justify-center">
           <AnimatedElement>
             <span className="inline-block text-[#0082AA] bg-[#00B3EA]/10 px-4 py-2 rounded-full text-base font-bold">
-              Request Proposal
+              Insights & Updates
             </span>
           </AnimatedElement>
           <AnimatedElement>
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-[#1A1A1A]">
-              Customized Election Services for Your Needs
+              Your Guide to Fair Elections
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.2}>
             <p className="text-lg text-[#666666]">
-              Get a tailored election solution designed for fairness, security,
-              and efficiency
+              Get expert tips and updates for a smooth, transparent election
+              process
             </p>
           </AnimatedElement>
         </div>
@@ -101,7 +101,7 @@ export default function ServicesPage() {
                   alt="Election Services Hero Image"
                   width={100}
                   height={100}
-                  className="absolute top-0 right-0 z-10"
+                  className="absolute top-0 right-0 z-0"
                   priority
                 />
               </div>
