@@ -360,7 +360,7 @@ export default function Home() {
                 {FAQs.map((faq, index) => (
                   <AnimatedElement key={index} delay={0.1 * index}>
                     <AccordionItem value={`item-${index}`}>
-                      <AccordionTrigger className="text-left text-lg font-medium">
+                      <AccordionTrigger className="text-left text-base md:text-xl font-medium hover:text-[#00B3EA] focus:text-[#00B3EA] transition-all duration-300 hover:cursor-pointer min-h-[50px] py-2">
                         {faq.question}
                       </AccordionTrigger>
                       <AnimatePresence>
@@ -369,6 +369,7 @@ export default function Home() {
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
+                          className="text-left text-lg text-gray-600"
                         >
                           {faq.answer}
                         </AnimatedAccordionContent>
