@@ -320,10 +320,10 @@ export default function Home() {
             style={{ backgroundImage: `url(${BGHomeImg.src})` }}
           >
             <div className="flex flex-col gap-4">
-              <span className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl text-white">
+              <span className="text-2xl md:text-3xl text-center md:text-left font-bold tracking-tighter sm:text-4xl text-white">
                 Simplify Your Elections
               </span>
-              <span className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl text-[#E1FF00]">
+              <span className="text-2xl md:text-3xl text-center md:text-left font-bold tracking-tighter sm:text-4xl text-[#E1FF00]">
                 Contact us Today!
               </span>
             </div>
@@ -343,7 +343,7 @@ export default function Home() {
         <div className="container mx-auto text-center px-4 md:px-0">
           <AnimatedElement>
             <div className="flex flex-col gap-4">
-              <span className="text-center text-5xl font-bold">
+              <span className="text-center text-2xl md:text-5xl font-bold">
                 Frequently Asked{" "}
                 <span className="text-[#00B3EA]">Questions</span>
               </span>
@@ -369,7 +369,7 @@ export default function Home() {
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
-                          className="text-left text-lg text-gray-600"
+                          className="text-left text-sm md:text-lg text-gray-600"
                         >
                           {faq.answer}
                         </AnimatedAccordionContent>
