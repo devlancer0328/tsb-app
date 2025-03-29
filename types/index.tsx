@@ -22,11 +22,13 @@ import { CompletedSVG } from "@/app/assets/svg/CompletedSVG";
 import ReliableSVG from "@/app/assets/svg/ReliableSVG";
 import FlexibleSVG from "@/app/assets/svg/FlexibleSVG";
 import AmazingSVG from "@/app/assets/svg/AmazingSVG";
-import BlogImg_1 from "@/app/assets/img/service_2.jpg";
 import BlogImg_2 from "@/app/assets/img/election.jpg";
 import BlogImg_3 from "@/app/assets/img/blog_1.jpg";
 import BlogImg_4 from "@/app/assets/img/service.jpg";
 import BlogImg_5 from "@/app/assets/img/blog_2.jpg";
+import BlogImg_6 from "@/app/assets/img/service_2.jpg";
+import BlogImg_7 from "@/app/assets/img/BlogImg_6.jpg";
+import BlogImg_8 from "@/app/assets/img/BlogImg_7.jpg";
 
 export const FEATURES = [
   "Annual Meeting Elections",
@@ -150,33 +152,47 @@ export const HIGHLIGHTS = [
 
 export const FEEDBACK = [
   {
-    name: "James Tans",
-    role: "Entrepreneur",
+    name: "Phyllis Kossars",
+    role: "Board President - BVCA",
     avatar: MaleAvatar,
     description:
-      "The Secret Ballot made our HOA election seamless and stress-free The process was fair, secure, and easy for our members. Highly recommend!",
+      "If you need an Inspector of Elections for your HOA, you must call Joshua at The Secret Ballot. His ethics and standards of doing business are meticulous and honest. With the Secret Ballot, you will never look back!",
   },
   {
-    name: "Savansa Mita",
-    role: "CTNS Team Lead",
+    name: "Jamie Marzion, CCAM",
+    role: "Walters Management",
+    avatar: MaleAvatar,
+    description:
+      "I have worked with Josh and The Secret Ballot for 5+ years. His knowledge of election procedure, accuracy, attention to detail and communication skills are top notch. If I could get all my Boards to use Josh and The Secret Ballot, my life would be much easier!",
+  },
+  {
+    name: "Samantha Emig, CCAM",
+    role: "Professional HOA Consultants",
     avatar: FemaleAvatar,
     description:
-      "Clear instructions, easy access, and real-time updates .The Secret Ballot transformed our election process into a smooth experience!",
+      "Working with The Secret Ballot makes HOA elections seamless and stress-free. Their attention to detail and expertise gives me and my clients peace of mind knowing everything is handled correctly.",
   },
   {
-    name: "Andrew Bare",
-    role: "Rotatory Clubs",
+    name: "Martha Garcia, CMCA, AMS",
+    role: "The Prescott Companies",
     avatar: MaleAvatar2,
     description:
-      "A trustworthy election service that delivers on its promises! Fair, efficient, and incredibly well organized",
+      "I have had the pleasure of working with The Secret Ballot for a few years across multiple association’s that I have managed, and it has been a pleasure. Their knowledgeable guidance makes the election process seamless for managers, providing confidence and clarity every step of the way.",
   },
   {
-    name: "Savansa Mita",
-    role: "CTNS Team Lead",
+    name: "Mary Durante – Le Leu",
+    role: "Board President – SNVHOA",
     avatar: FemaleAvatar,
     description:
-      "Clear instructions, easy access, and real-time updates .The Secret Ballot transformed our election process into a smooth experience!",
+      "We have worked with Josh for the past five years. The Secret Ballot has handled our HOA annual election meetings, along with anything else that requires a membership vote. Josh has always been professional, and we have always been reassured about any questions that come up. Josh has done an exceptional job, going above and beyond to meet our needs. He knows the business well and has a vast knowledge of the legal system. I would trust him with any elections for our HOA. I give The Secret Ballot five stars. ⭐⭐⭐⭐⭐",
   },
+  {
+    name: "Gina Falcon-Heneghan, CMCA, AMS",
+    role: "N. N. Jaeschke, Inc",
+    avatar: FemaleAvatar,
+    description:
+      "The Secret Ballot has integrity and demonstrates it through upfront/honest service options (proposals), and efficient service thereafter that provides a clear path for any board. As a manager, I totally appreciate that level of service!",
+  }
 ];
 
 export const PARTNERSHIPS = [
@@ -260,31 +276,31 @@ export const POSTS = [
     category: "Elections",
   },
   {
-    title: "Elections by Acclamation",
+    title: "Why Appoint an Inspector",
     excerpt:
-      "Understanding the process and requirements for elections by acclamation in HOA governance.",
+      "Since election procedure constantly changes, its important to have an expert on your team!",
     date: "2024-02-15",
-    image: BlogImg_1,
+    image: BlogImg_6,
     slug: "elections-by-acclamation",
-    category: "Voting",
+    category: "Inspector",
   },
   {
-    title: "Elections by Acclamation",
+    title: "What are the benefits of Virtual Meetings?",
     excerpt:
-      "Understanding the process and requirements for elections by acclamation in HOA governance.",
+      "Understanding Virtual Meetings requirements is key for a successful and legal Election!",
     date: "2024-02-15",
-    image: BlogImg_1,
+    image: BlogImg_7,
     slug: "elections-by-acclamation",
-    category: "Meetings",
+    category: "Meeting",
   },
   {
-    title: "Elections by Acclamation",
+    title: "Education and Partnership Programs",
     excerpt:
-      "Understanding the process and requirements for elections by acclamation in HOA governance.",
+      "Proud CAI & CACM Member and Sponsor!",
     date: "2024-02-15",
-    image: BlogImg_1,
+    image: BlogImg_8,
     slug: "elections-by-acclamation",
-    category: "Meetings",
+    category: "Education",
   },
 ];
 

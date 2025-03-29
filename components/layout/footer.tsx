@@ -15,7 +15,7 @@ export function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5" />
-                <span>+11 8864321027</span>
+                <span>+1 6193326350</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5" />
@@ -23,7 +23,7 @@ export function Footer() {
                   href="mailto:supportinfo@thesecretballot.com"
                   className="hover:text-gray-200 transition-colors"
                 >
-                  supportinfo@thesecretballot.com
+                  info@thesecretballot.com
                 </a>
               </div>
               <div className="flex items-center space-x-2">

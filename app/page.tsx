@@ -172,8 +172,8 @@ export default function Home() {
         <div className="container mx-auto text-center px-4 md:px-0">
           <div className="flex flex-col gap-4">
             <span className="text-center text-2xl md:text-5xl font-bold">
-              Our <span className="text-[#00B3EA]">Trusted</span> Voting{" "}
-              <span className="text-[#00B3EA]">Solutions</span> We offer
+              Voting <span className="text-[#00B3EA]">Solutions</span> You{" "}
+              <span className="text-[#00B3EA]">Can</span> Trust
             </span>
             <span className="text-base md:text-lg text-gray-600">
               From ballot preparation to vote counting, we ensure a seamless and
@@ -191,35 +191,32 @@ export default function Home() {
                   onClick={() => setSelectedIndex(index)}
                 >
                   <span
-                    className={`text-lg md:text-xl font-bold transition-colors ${
-                      selectedIndex === index
-                        ? "text-[#0073A0]"
-                        : "text-gray-600 hover:text-[#0073A0]/80"
-                    }`}
+                    className={`text-lg md:text-xl font-bold transition-colors ${selectedIndex === index
+                      ? "text-[#0073A0]"
+                      : "text-gray-600 hover:text-[#0073A0]/80"
+                      }`}
                   >
                     {service.title}
                   </span>
                   <span
-                    className={`text-base md:text-lg transition-all ${
-                      selectedIndex === index
-                        ? "text-[#0073A0] block"
-                        : "text-gray-600 hidden hover:text-[#0073A0]/80"
-                    }`}
+                    className={`text-base md:text-lg transition-all ${selectedIndex === index
+                      ? "text-[#0073A0] block"
+                      : "text-gray-600 hidden hover:text-[#0073A0]/80"
+                      }`}
                   >
                     {service.description}
                   </span>
                   <hr
-                    className={`border-t w-full transition-colors ${
-                      selectedIndex === index
-                        ? "border-[#0073A0] border-2"
-                        : "border-gray-600 group-hover:border-[#0073A0]/50"
-                    }`}
+                    className={`border-t w-full transition-colors ${selectedIndex === index
+                      ? "border-[#0073A0] border-2"
+                      : "border-gray-600 group-hover:border-[#0073A0]/50"
+                      }`}
                   />
                 </div>
               ))}
             </div>
             <div className="flex flex-col gap-4 justify-end w-full md:w-[600px] mt-4 md:mt-0">
-              <div className="relative bg-[#0080B2] rounded-t-3xl p-4 h-[200px] md:h-[300px] w-full md:w-[600px] hidden md:block" />
+              <div className="relative rounded-t-3xl p-4 h-[200px] md:h-[300px] w-full md:w-[600px] hidden md:block" />
               <Image
                 src={heroImages[selectedIndex]}
                 alt="Election Services Hero Image"
@@ -267,7 +264,7 @@ export default function Home() {
                                 <div className="flex w-full gap-2 items-end justify-end">
                                   <Quote className="h-8 w-8 text-primary mb-4" />
                                 </div>
-                                <p className="text-gray-600 italic text-lg text-left h-[150px]">
+                                <p className="text-gray-600 italic text-lg text-left h-[150px] overflow-y-auto line-clamp-6">
                                   "{feedback.description}"
                                 </p>
                                 <div className="flex flex-row gap-4 py-4">
@@ -301,9 +298,8 @@ export default function Home() {
                 {FEEDBACK.slice(0, FEEDBACK.length - 2).map((_, index) => (
                   <button
                     key={index}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      currentSlide === index ? "bg-[#00B3EA]" : "bg-gray-300"
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-colors ${currentSlide === index ? "bg-[#00B3EA]" : "bg-gray-300"
+                      }`}
                     onClick={() => api?.scrollTo(index)}
                   />
                 ))}

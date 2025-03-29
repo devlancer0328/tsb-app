@@ -66,11 +66,11 @@ export default function ContactPage() {
                 Contact Us
               </span>
               <span className="text-base md:text-lg text-[#00A3D9] flex flex-row items-center gap-2 ">
-                <Phone className="w-5 md:w-6 h-5 md:h-6" /> +11 8864321027
+                <Phone className="w-5 md:w-6 h-5 md:h-6" /> +1 6193326350
               </span>
               <span className="text-base md:text-lg text-[#00A3D9] flex flex-row items-center gap-2">
                 <Mail className="w-5 md:w-6 h-5 md:h-6" />{" "}
-                supportinfo@thesecretballot.com
+                info@thesecretballot.com
               </span>
               <span className="text-base md:text-lg text-[#00A3D9] flex flex-row items-center gap-2">
                 <MapPin className="w-5 md:w-6 h-5 md:h-6" /> 2522 Alpine Blvd,
@@ -106,7 +106,7 @@ export default function ContactPage() {
             </span>
             <span className="text-base md:text-lg text-gray-800">
               Your all-in-one election support: secure voting, expert guidance,
-              and 24/7 assistance—so you can run elections worry-free
+              and assistance. So you can run elections worry-free
             </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-12 items-center">

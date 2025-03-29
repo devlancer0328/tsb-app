@@ -7,8 +7,6 @@ import { AnimatedElement } from "@/components/ui/animated-element";
 import { motion } from "framer-motion";
 
 import BGServiceVoteImg from "@/app/assets/img/services-vote.png";
-import BGServiceImg1 from "@/app/assets/img/services-bg1.png";
-import BGServiceImg2 from "@/app/assets/img/services-bg2.png";
 
 import CardServiceImg1 from "@/app/assets/img/service-img1.png";
 import CardServiceImg2 from "@/app/assets/img/service-img2.png";
@@ -35,7 +33,7 @@ export default function ServicesPage() {
   usePageLoading();
   return (
     <div className="container mx-auto px-4 py-12 md:px-0 pt-[140px] md:pt-[160px]">
-      <div className="mx-auto space-y-12 grid grid-cols-1 md:grid-cols-2 text-center md:text-left bg-[#EBF9FF] rounded-2xl pl-4 md:pl-8">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 text-center md:text-left bg-[#EBF9FF] rounded-2xl pl-4 md:pl-8">
         <div className="flex flex-col gap-8 justify-center">
           <AnimatedElement>
             <span className="inline-block text-[#0082AA] bg-[#00B3EA]/10 px-4 py-2 rounded-full text-base font-bold mt-4 md:mt-0">
@@ -54,32 +52,16 @@ export default function ServicesPage() {
             </p>
           </AnimatedElement>
         </div>
-        <div className="relative order-first md:order-last">
+        <div className="relative order-first md:order-last ">
           <AnimatedElement>
             <div className="relative z-10">
-              <div className="relative z-20 rounded-[2rem] overflow-hidden flex justify-end z-10">
+              <div className="relative z-20 overflow-hidden">
                 <Image
                   src={BGServiceVoteImg}
                   alt="Election Services Hero Image"
-                  className="h-auto z-10"
-                  width={500}
+                  className="w-full h-full object-cover object-center rounded-tr-2xl rounded-br-2xl"
+                  width={750}
                   height={500}
-                  priority
-                />
-                <Image
-                  src={BGServiceImg2}
-                  alt="Election Services Hero Image"
-                  className="absolute bottom-0 left-20 z-0"
-                  width={330}
-                  height={330}
-                  priority
-                />
-                <Image
-                  src={BGServiceImg1}
-                  alt="Election Services Hero Image"
-                  width={100}
-                  height={100}
-                  className="absolute top-0 right-0 z-0"
                   priority
                 />
               </div>
