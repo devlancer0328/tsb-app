@@ -31,12 +31,35 @@ export function RequestProposalForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [dueDate, setDueDate] = useState<Date>();
+  const [urgency, setUrgency] = useState<string>();
+  const [description, setDescription] = useState<string>();
+  const [associationName, setAssociationName] = useState<string>();
+  const [companyName, setCompanyName] = useState<string>();
+  const [contactName, setContactName] = useState<string>();
+  const [email, setEmail] = useState<string>();
+  const [phone, setPhone] = useState<string>();
+  const [associationAddress, setAssociationAddress] = useState<string>();
+  const [membershipMeetingDate, setMembershipMeetingDate] = useState<string>();
+  const [numberOfUnits, setNumberOfUnits] = useState<string>();
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function handleSubmit() {
+
+    console.log({
+      selectedService,
+      urgency,
+      dueDate,
+      description,
+      associationName,
+      companyName,
+      contactName,
+      email,
+      phone,
+      associationAddress,
+      membershipMeetingDate,
+      numberOfUnits,
+    });
+
     setIsSubmitting(true);
-
-    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
       title: "Proposal request submitted",
@@ -45,7 +68,6 @@ export function RequestProposalForm() {
     });
 
     setIsSubmitting(false);
-    event.currentTarget.reset();
   }
 
   return (
@@ -114,7 +136,7 @@ export function RequestProposalForm() {
                     How urgent is your request{" "}
                     <span className="text-red-600">*</span>
                   </Label>
-                  <Select required defaultValue="low">
+                  <Select required defaultValue="low" onValueChange={setUrgency}>
                     <SelectTrigger className="h-10 bg-white">
                       <SelectValue placeholder="Select urgency" />
                     </SelectTrigger>
@@ -169,6 +191,7 @@ export function RequestProposalForm() {
                   placeholder="Please provide any additional information about your project"
                   className="min-h-[150px] bg-white"
                   style={{ fontSize: "1rem" }}
+                  onChange={(e) => setDescription(e.target.value)}
                   required
                 />
               </div>
@@ -208,6 +231,7 @@ export function RequestProposalForm() {
                   required
                   className="bg-white h-12"
                   placeholder="Enter your Association Name"
+                  onChange={(e) => setAssociationName(e.target.value)}
                 />
               </div>
               <div className="space-y-2">
@@ -222,6 +246,7 @@ export function RequestProposalForm() {
                   required
                   className="bg-white h-12"
                   placeholder="Enter your company Name"
+                  onChange={(e) => setCompanyName(e.target.value)}
                 />
               </div>
             </div>
@@ -238,6 +263,7 @@ export function RequestProposalForm() {
                   required
                   className="bg-white h-12"
                   placeholder="Enter your First and Last Name"
+                  onChange={(e) => setContactName(e.target.value)}
                 />
               </div>
               <div className="space-y-2">
@@ -250,6 +276,7 @@ export function RequestProposalForm() {
                   required
                   className="bg-white h-12"
                   placeholder="Enter your Email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -264,6 +291,7 @@ export function RequestProposalForm() {
                   required
                   className="bg-white h-12"
                   placeholder="Enter your Phone Number"
+                  onChange={(e) => setPhone(e.target.value)}
                 />
               </div>
               <div className="space-y-2">
@@ -278,6 +306,7 @@ export function RequestProposalForm() {
                   required
                   className="bg-white h-12"
                   placeholder="Enter your Association Address"
+                  onChange={(e) => setAssociationAddress(e.target.value)}
                 />
               </div>
             </div>
@@ -294,6 +323,7 @@ export function RequestProposalForm() {
                   required
                   className="bg-white h-12"
                   placeholder="Enter your Membership Meeting Date"
+                  onChange={(e) => setMembershipMeetingDate(e.target.value)}
                 />
               </div>
               <div className="space-y-2">
@@ -306,6 +336,7 @@ export function RequestProposalForm() {
                   required
                   className="bg-white h-12"
                   placeholder="Enter your Number of Units"
+                  onChange={(e) => setNumberOfUnits(e.target.value)}
                 />
               </div>
             </div>
