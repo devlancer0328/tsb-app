@@ -8,11 +8,6 @@ import { Award } from "lucide-react";
 import MaleAvatar from "@/app/assets/img/avatars/male.png";
 import MaleAvatar2 from "@/app/assets/img/avatars/male2.png";
 import FemaleAvatar from "@/app/assets/img/avatars/female1.png";
-import { AssociationSVG } from "@/app/assets/svg/AssociationSVG";
-import { EducationSVG } from "@/app/assets/svg/EducationSVG";
-import { GovernmentSVG } from "@/app/assets/svg/GovernmentSVG";
-import { CorporateSVG } from "@/app/assets/svg/CorporateSVG";
-import { UnionsSVG } from "@/app/assets/svg/UnionsSVG";
 import { BallotSVG } from "@/app/assets/svg/BallotSVG";
 import { VoterSVG } from "@/app/assets/svg/VoterSVG";
 import { SecureSVG } from "@/app/assets/svg/SecureSVG";
@@ -29,6 +24,11 @@ import BlogImg_5 from "@/app/assets/img/blog_2.jpg";
 import BlogImg_6 from "@/app/assets/img/service_2.jpg";
 import BlogImg_7 from "@/app/assets/img/BlogImg_6.jpg";
 import BlogImg_8 from "@/app/assets/img/BlogImg_7.jpg";
+import { BuildingSVG } from "@/app/assets/svg/BuildingSVG";
+import { HomeSVG } from "@/app/assets/svg/HomeSVG";
+import { TownhouseSVG } from "@/app/assets/svg/TownhouseSVG";
+import { CommunitySVG } from "@/app/assets/svg/CommunitySVG";
+import { NetworkSVG } from "@/app/assets/svg/NetworkSVG";
 
 export const FEATURES = [
   "Annual Meeting Elections",
@@ -100,7 +100,7 @@ export const FAQs = [
   {
     question: "How do I know if I qualify to be on the Ballot?",
     answer:
-      "You can contact our office and we can provide the qualifications per your Association’s election rules, or you can visit your HOA's webpage in our website to access the elections rules and review them. The election rules provide the qualifications that need to be met to be on the Ballot.",
+      "You can contact our office and we can provide the qualifications per your Association's election rules, or you can visit your HOA's webpage in our website to access the elections rules and review them. The election rules provide the qualifications that need to be met to be on the Ballot.",
   },
   {
     question: "Will my Candidate Application be published with the ballot?",
@@ -177,7 +177,7 @@ export const FEEDBACK = [
     role: "The Prescott Companies",
     avatar: MaleAvatar2,
     description:
-      "I have had the pleasure of working with The Secret Ballot for a few years across multiple association’s that I have managed, and it has been a pleasure. Their knowledgeable guidance makes the election process seamless for managers, providing confidence and clarity every step of the way.",
+      "I have had the pleasure of working with The Secret Ballot for a few years across multiple association's that I have managed, and it has been a pleasure. Their knowledgeable guidance makes the election process seamless for managers, providing confidence and clarity every step of the way.",
   },
   {
     name: "Mary Durante – Le Leu",
@@ -217,7 +217,7 @@ export const SERVICES = [
   {
     title: "Annual Meeting Elections",
     description:
-      "Conducting fair and transparent elections for HOA board members",
+      "Amendments to Governing Documents Managing votes on updates to Bylaws, CC&Rs, and HOA policies ",
   },
   {
     title: "Amendments to Governing Documents",
@@ -226,11 +226,11 @@ export const SERVICES = [
   {
     title: "Special Assessment Approval",
     description:
-      "Facilitating approval processes for special community assessments",
+      "Facilitating approval processes for Special Community Assessments",
   },
   {
     title: "Approval of Increase in Assessments",
-    description: "Ensuring smooth voting for assessment rate changes",
+    description: "Ensuring smooth voting for Assessment rate changes",
   },
   {
     title: "Recall of the Board",
@@ -285,7 +285,7 @@ export const POSTS = [
     category: "Inspector",
   },
   {
-    title: "What are the benefits of Virtual Meetings?",
+    title: "What are the benefits of Virtual Meeting?",
     excerpt:
       "Understanding Virtual Meetings requirements is key for a successful and legal Election!",
     date: "2024-02-15",
@@ -306,24 +306,28 @@ export const POSTS = [
 
 export const INDUSTRY_LIST = [
   {
-    name: "Professional\nAssociations",
-    icon: <AssociationSVG />,
+    name: "Condos",
+    icon: <BuildingSVG />,
   },
   {
-    name: "Education",
-    icon: <EducationSVG />,
+    name: "PUDs",
+    icon: <HomeSVG />,
   },
   {
-    name: "Governments",
-    icon: <GovernmentSVG />,
+    name: "Townhomes",
+    icon: <TownhouseSVG />,
   },
   {
-    name: "Corporate &\nShareholder",
-    icon: <CorporateSVG />,
+    name: "Neighborhood Elections",
+    icon: <CommunitySVG />,
   },
   {
-    name: "Unions",
-    icon: <UnionsSVG />,
+    name: "Master Associations",
+    icon: <NetworkSVG />,
+  },
+  {
+    name: " Commercial CIDs",
+    icon: <AmazingSVG />,
   },
 ];
 
@@ -376,7 +380,7 @@ export const EVOTING_FEATURES = [
   {
     title: "Amazing Service",
     description:
-      "Friendly, professional support available 24/7, all year round",
+      "Friendly, professional support available, all year round",
     icon: <AmazingSVG />,
   },
 ];

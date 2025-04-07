@@ -268,14 +268,6 @@ export default function Home() {
                                   "{feedback.description}"
                                 </p>
                                 <div className="flex flex-row gap-4 py-4">
-                                  <div className="h-12 w-12 rounded-full bg-[#00B3EA]/10 flex items-center justify-center">
-                                    <Image
-                                      src={feedback.avatar}
-                                      alt={`${feedback.name}'s Avatar`}
-                                      width={48}
-                                      height={48}
-                                    />
-                                  </div>
                                   <div className="flex flex-col">
                                     <span className="font-bold">
                                       {feedback.name}

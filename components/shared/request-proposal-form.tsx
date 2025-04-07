@@ -86,8 +86,8 @@ export function RequestProposalForm() {
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="other" id="other" />
-                    <Label htmlFor="other" className="text-lg">
+                    <RadioGroupItem value="approval" id="approval" />
+                    <Label htmlFor="approval" className="text-lg">
                       Approval of Increase in Asessments
                     </Label>
                   </div>
@@ -95,6 +95,12 @@ export function RequestProposalForm() {
                     <RadioGroupItem value="recall" id="recall" />
                     <Label htmlFor="recall" className="text-lg">
                       Recall of the Board
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="other" id="other" />
+                    <Label htmlFor="other" className="text-lg">
+                      Other
                     </Label>
                   </div>
                 </RadioGroup>
