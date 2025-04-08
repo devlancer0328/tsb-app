@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/popover";
 import Image from "next/image";
 import RequestHeroImg from "@/app/assets/img/request-hero.png";
+import axios from "axios"
 
 export function RequestProposalForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,32 +43,54 @@ export function RequestProposalForm() {
   const [membershipMeetingDate, setMembershipMeetingDate] = useState<string>();
   const [numberOfUnits, setNumberOfUnits] = useState<string>();
 
-  async function handleSubmit() {
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
 
-    console.log({
-      selectedService,
-      urgency,
-      dueDate,
-      description,
-      associationName,
-      companyName,
-      contactName,
-      email,
-      phone,
-      associationAddress,
-      membershipMeetingDate,
-      numberOfUnits,
-    });
+    try {
+      setIsSubmitting(true);
 
-    setIsSubmitting(true);
+      const response = await axios.post(`/api/request-proposal`, {
+        selectedService,
+        urgency,
+        dueDate,
+        description,
+        associationName,
+        companyName,
+        contactName,
+        email,
+        phone,
+        associationAddress,
+        membershipMeetingDate,
+        numberOfUnits
+      });
 
-    toast({
-      title: "Proposal request submitted",
-      description:
-        "We'll prepare your custom proposal and get back to you soon.",
-    });
+      if (response.status === 200) {
+        toast({
+          title: "Proposal request submitted",
+          description:
+            "We'll prepare your custom proposal and get back to you soon.",
+        });
 
-    setIsSubmitting(false);
+        // Clear all form state values
+        setSelectedService(null);
+        setDueDate(undefined);
+        setUrgency(undefined);
+        setDescription(undefined);
+        setAssociationName(undefined);
+        setCompanyName(undefined);
+        setContactName(undefined);
+        setEmail(undefined);
+        setPhone(undefined);
+        setAssociationAddress(undefined);
+        setMembershipMeetingDate(undefined);
+        setNumberOfUnits(undefined);
+      }
+    } catch (err) {
+      console.log(err)
+    } finally {
+      setIsSubmitting(false);
+    }
+
   }
 
   return (
