@@ -11,7 +11,7 @@ async function sendMail(subject: string, templateId: string, dynamicTemplateData
     sgMail.setApiKey(apiKey)
 
     const msg = {
-        to: "topdev68@gmail.com",
+        to: "joshua@thesecretballot.com",
         from: "joshua@thesecretballot.com",
         subject: subject,
         templateId: templateId,
